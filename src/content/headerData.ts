@@ -1,5 +1,5 @@
 
-export const  headerConfig = {
+export const  headerData= {
     navItems: [
       { label: "Home", href: "#" },
       { label: "Services", href: "#services" },
