@@ -1,5 +1,5 @@
 
-export const footerConfig = {
+export const footerData = {
     copyright:
       "© 2025 Your Business Name. All rights reserved.",
     socialLinks: [

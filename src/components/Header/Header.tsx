@@ -14,7 +14,7 @@ export default function Header() {
     >
       <div
         className="
-          max-w-[1200px] mx-auto 
+          max-w-7xl mx-auto 
           flex items-center justify-between 
           px-6 py-4
         "

@@ -1,21 +1,21 @@
 
-export const  testimonialsConfig = [
+export const  testimonialsData= [
     {
       name: "Customer One",
       rating: 5,
       comment: "Amazing service and very professional!",
-      photo: "/images/customer1.jpg"
+      photo: "/testimonial/img.png"
     },
     {
       name: "Customer Two",
       rating: 4,
       comment: "Great experience, would definitely recommend!",
-      photo: "/images/customer2.jpg"
+      photo: "/testimonial/img.png"
     },
     {
       name: "Customer Three",
       rating: 5,
       comment: "Best in town! Super friendly team.",
-      photo: "/images/customer3.jpg"
-    }
+      photo: "/testimonial/img.png"
+    },
   ];

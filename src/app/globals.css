@@ -46,3 +46,28 @@ body {
   --radius-base: 0.75rem;  /* Rounded corners */
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+
+
+/* Masonry layout */
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}

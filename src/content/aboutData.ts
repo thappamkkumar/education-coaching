@@ -1,5 +1,5 @@
 	
-export const  aboutConfig = {
+export const  aboutData= {
     title: "About Us",
     description:
       "We provide modern, clean, and professional services with a focus on customer satisfaction.",
@@ -9,6 +9,6 @@ export const  aboutConfig = {
       "Fast and reliable service",
       "Affordable pricing options"
     ],
-    imageUrl: "/images/about.jpg"
+    imageUrl: "/about/about.jpg"
   };
 	

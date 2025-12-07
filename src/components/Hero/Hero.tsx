@@ -12,7 +12,7 @@ export default function Hero() {
     >
       <div
         className="
-          max-w-[1200px] mx-auto
+          max-w-7xl mx-auto
           px-6
           grid grid-cols-1 md:grid-cols-2
           gap-12
