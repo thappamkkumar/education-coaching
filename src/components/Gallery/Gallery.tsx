@@ -4,7 +4,7 @@ import {galleryData} from "@/content/galleryData";
 
  const Gallery  = ( ) => {
   return (
-    <section className="w-full py-20 " >
+    <section id="gallery" className="w-full py-20 " >
 		
       <div className=" max-w-7xl mx-auto
           px-6  px-4">

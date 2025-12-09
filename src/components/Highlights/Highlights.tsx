@@ -6,8 +6,8 @@ import { highlightsData } from "@/content/highlightsData";
 
  const Highlights = () => {
   return (
-    <section className="">
-			<div className="  max-w-7xl mx-auto px-6 mt-12   grid grid-cols-1 sm:grid-cols-4 gap-8  ">
+    <section className="w-full py-20">
+			<div className="  max-w-7xl mx-auto px-6      grid grid-cols-1 sm:grid-cols-4 gap-8  ">
 				
 				{highlightsData.map((item, index) => {
 					const Icon = highlightsIconMap[item.icon];

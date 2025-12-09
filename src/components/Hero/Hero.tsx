@@ -3,8 +3,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section
-      className="  w-full py-20  overflow-hidden bg-[var(--color-surface)]"
+    <section 
+			id="home"
+      className="  w-full pt-30 pb-20  overflow-hidden bg-[var(--color-surface)]"
     >
       <div
         className="  max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"

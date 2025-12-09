@@ -7,6 +7,7 @@ import { servicesData } from "@/content/servicesData";
  const Services= () => {
   return (
     <section
+			id="services"
       className="w-full py-20" 
     >
       <div className="max-w-7xl mx-auto px-6">
