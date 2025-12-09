@@ -29,13 +29,12 @@ body {
 
 :root {
   /* Core brand colors */
-  --color-primary: #0d6efd;    /* Blue */
-  --color-secondary: #0aa7a7;  /* Teal */
+  --color-primary: rgba(10,167,167,1);    /* Teal */ 
   --color-accent: #111827;     /* Deep gray for highlights */
 
   /* Base UI colors */
   --color-background: #ffffff;
-  --color-surface: #f9fafb;
+  --color-surface: rgba(243,244,245,1);
   --color-border: #e5e7eb;
 
   /* Typography */
