@@ -4,8 +4,9 @@ export interface HighlightItem {
 }
 
 export const highlightsData: HighlightItem[] = [
-  { icon: "star", text: "10+ Years Experience" },
+  { icon: "award", text: "10+ Years Experience" },
   { icon: "rupee", text: "Affordable Pricing" },
   { icon: "team", text: "Professional Team" },
   { icon: "shield", text: "Trusted by 1000+ Customers" },
+  { icon: "star", text: "4.9/5 Client Rating" },
 ];

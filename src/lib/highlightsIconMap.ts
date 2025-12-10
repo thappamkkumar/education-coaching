@@ -1,4 +1,5 @@
 import {
+  Award,
   Star,
   IndianRupee,
   Users,
@@ -6,8 +7,9 @@ import {
 } from "lucide-react";
 
 export const highlightsIconMap: Record<string, any> = {
-  star: Star,
+  award: Award,
   rupee: IndianRupee,
   team: Users,
   shield: ShieldCheck,
+  star: Star,
 };

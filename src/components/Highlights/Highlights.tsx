@@ -1,38 +1,42 @@
- 
- 
 import { highlightsIconMap } from "@/lib/highlightsIconMap";
 import { highlightsData } from "@/content/highlightsData";
- 
 
- const Highlights = () => {
+const Highlights = () => {
   return (
-    <section className="w-full py-20">
-			<div className="  max-w-7xl mx-auto px-6      grid grid-cols-1 sm:grid-cols-4 gap-8  ">
-				
-				{highlightsData.map((item, index) => {
-					const Icon = highlightsIconMap[item.icon];
+    <section
+      id="highlights"
+      className="w-full py-20"
+      aria-label="Key highlights"
+    >
+      <div
+        className="max-w-7xl mx-auto px-6 
+        grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+      >
+        {highlightsData.map((item, index) => {
+          const Icon = highlightsIconMap[item.icon];
 
-					return (
-						<div
-							key={index}
-							className="flex flex-col items-center text-center"
-							style={{ color: "var(--color-text-primary)" }}
-						>
-							{Icon && (
-								<Icon
-									className="w-10 h-10 mb-3"
-									strokeWidth={1.5}
-								/>
-							)}
+          return (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center p-4"
+            >
+              {Icon && (
+                <Icon
+                  className="w-12 h-12 mb-4 opacity-90 text-[var(--color-primary)]"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+              )}
 
-							<p className="text-sm font-medium">
-								{item.text}
-							</p>
-						</div>
-					);
-				})}
-			</div>
-		</section>
+              <p className="text-lg font-bold tracking-wide text-[var(--color-text-primary)]">
+                {item.text}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 };
+
 export default Highlights;
