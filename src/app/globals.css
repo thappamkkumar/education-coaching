@@ -40,6 +40,7 @@ body {
   /* Typography */
   --color-text-primary: #111827;
   --color-text-secondary: #6b7280;
+  --color-text-tertiary: #ffffff;
 
   /* UI effects */
   --radius-base: 0.75rem;  /* Rounded corners */
