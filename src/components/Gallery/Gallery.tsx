@@ -1,43 +1,74 @@
+"use client";
 
-import Image from "next/image";
-import {galleryData} from "@/content/galleryData";
+import { useState, useEffect } from "react";
+import { galleryData } from "@/content/galleryData";
+import GalleryGrid from "./GalleryGrid";
+import GalleryPagination from "./GalleryPagination";
+import GalleryModal from "./GalleryModal";
 
- const Gallery  = ( ) => {
+const Gallery = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [selectedImage, setSelectedImage] = useState<null | { src: string; alt: string }>(null);
+
+  // Responsive items per page
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth < 640) setItemsPerPage(10);
+      else if (window.innerWidth < 1024) setItemsPerPage(15);
+      else setItemsPerPage(20);
+    };
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
+  const totalPages = Math.ceil(galleryData.length / itemsPerPage);
+  const paginatedData = galleryData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  // Navigate to top of gallery on page change
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    const el = document.getElementById("gallery"); 
+		if (el) {
+			window.scrollBy(0, -50); // adjust scroll offset before smooth scroll
+			setTimeout(() => {
+				el.scrollIntoView({ behavior: 'smooth' });
+			}, 10);
+		}
+  };
+
   return (
-    <section id="gallery" className="w-full py-20 " >
-		
-      <div className=" max-w-7xl mx-auto
-          px-6  px-4">
-
-        <h2
-          className="text-3xl font-bold text-center mb-12"
-          style={{ color: "var(--color-text-primary)" }}
+    <section
+      id="gallery"
+      className="w-full py-20 bg-[var(--color-background)]"
+      aria-labelledby="gallery-heading"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+         <h2
+          id="gallery-heading"
+          className="text-3xl  md:text-4xl font-bold text-center mb-2 text-[var(--color-text-primary)]"
         >
-          Gallery
+          Snapshots of Our Work
         </h2>
+        <p className="text-center text-[var(--color-text-secondary)] mb-12 max-w-2xl mx-auto">
+          A curated collection showcasing our projects, creativity, and achievements.
+        </p>
 
-        <div className="masonry">
-          {galleryData.map((src, index) => (
-            <div key={index} className="masonry-item">
-              <div
-                className="relative w-full overflow-hidden rounded-xl"
-                style={{
-                  borderRadius: "var(--radius-base)",
-                  boxShadow: "var(--shadow-soft)"
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={`Gallery Image ${index + 1}`}
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <GalleryGrid data={paginatedData} onSelectImage={setSelectedImage} />
 
+        {galleryData.length > itemsPerPage && (
+          <GalleryPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        )}
+
+        {selectedImage && <GalleryModal image={selectedImage} onClose={() => setSelectedImage(null)} />}
       </div>
     </section>
   );

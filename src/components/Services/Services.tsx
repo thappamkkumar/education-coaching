@@ -12,12 +12,15 @@ const Services = () => {
     >
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2
+         <h2
           id="services-heading"
-          className="text-3xl md:text-4xl font-bold mb-12 text-center md:text-left tracking-tight text-[var(--color-text-primary)]"
+          className="text-3xl md:text-4xl font-bold text-center mb-2 text-[var(--color-text-primary)]"
         >
-          Explore Our Professional Services
+          Explore Our Services
         </h2>
+        <p className="text-center text-[var(--color-text-secondary)] mb-12 max-w-2xl mx-auto">
+          Discover the wide range of services we provide to deliver exceptional results.
+        </p>
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3   gap-6 md:gap-8">
