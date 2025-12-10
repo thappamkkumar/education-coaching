@@ -9,6 +9,8 @@ export const  aboutData= {
       "Fast and reliable service",
       "Affordable pricing options"
     ],
-    imageUrl: "/about/about.jpg"
+    imageUrl: "/about/about.jpg",
+    imageAltText: "About section image",   
+
   };
 	

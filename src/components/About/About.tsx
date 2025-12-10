@@ -1,56 +1,57 @@
-"use client";
-
-import Image from "next/image"; 
-import { aboutData } from "@/content/aboutData";
  
- const About  = () => {
-  const { title, description, bulletPoints, imageUrl } = aboutData;
+
+import Image from "next/image";
+import { aboutData } from "@/content/aboutData";
+import { CheckCircle } from "lucide-react"; 
+
+const About = () => {
+  const { title, description, bulletPoints, imageUrl, imageAltText } = aboutData;
 
   return (
     <section
-			id="about"
-      className="w-full py-20  " 
+      id="about"
+      className="w-full py-20"
+      aria-label="About section"
     >
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-        {/* Text Area */}
+        {/* LEFT CONTENT */}
         <div>
-          <h2
-            className="text-3xl font-bold mb-4"
-            style={{ color: "var(--color-text-primary)" }}
-          >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--color-text-primary)]">
             {title}
           </h2>
 
-          <p
-            className="text-base leading-relaxed mb-6"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
+          <p className="text-base leading-relaxed mb-6 text-[var(--color-text-secondary)]">
             {description}
           </p>
 
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {bulletPoints.map((item, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-2"
-                style={{ color: "var(--color-text-primary)" }}
+                className="flex items-start gap-3 text-[var(--color-text-primary)]"
               >
-                <span className="w-2 h-2 rounded-full mt-2"
-                  style={{ backgroundColor: "var(--color-primary)" }}
-                />
-                <span className="text-sm">{item}</span>
+                <CheckCircle
+									className="w-5 h-5 mt-0.5 text-[var(--color-primary)]"
+									strokeWidth={2}
+									aria-hidden="true"
+								/>
+                <span className="text-sm md:text-base leading-snug">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Image Area */}
-        <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-md"
-             style={{ borderRadius: "var(--radius-base)", boxShadow: "var(--shadow-soft)" }}>
+        {/* RIGHT IMAGE */}
+        <div
+          className="relative w-full h-72 sm:h-80 md:h-96 overflow-hidden  "
+          
+        >
           <Image
             src={imageUrl}
-            alt="About Us Image"
+            alt={imageAltText} 
             fill
             className="object-cover"
           />
@@ -60,4 +61,5 @@ import { aboutData } from "@/content/aboutData";
     </section>
   );
 };
+
 export default About;

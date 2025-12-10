@@ -6,7 +6,8 @@ export default function Hero() {
     <section 
 			id="home"
       className="  w-full pt-30 pb-20  overflow-hidden bg-[var(--color-surface)]"
-    >
+			 aria-label="Hero Section"
+		>
       <div
         className="  max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
       >
