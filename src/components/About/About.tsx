@@ -17,7 +17,7 @@ const About = () => {
 
         {/* LEFT CONTENT */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 md:mb-4  text-center md:text-left  text-[var(--color-text-primary)]">
+          <h2 className="text-3xl md:text-4xl font-bold   mb-4    text-[var(--color-text-primary)]">
             {title}
           </h2>
 
