@@ -30,7 +30,7 @@ export default function Hero() {
             <a
               href={heroData.primaryCTA.href}
               aria-label={heroData.primaryCTA.label}
-              className="px-8 py-3 rounded-2xl bg-[var(--color-primary)] text-white font-medium shadow-lg transition hover:opacity-90 text-center"
+              className="px-8 py-3 rounded-lg bg-[var(--color-primary)] text-white font-medium shadow-lg transition hover:opacity-90 text-center"
             >
               {heroData.primaryCTA.label}
             </a>
@@ -38,7 +38,7 @@ export default function Hero() {
             <a
               href={heroData.secondaryCTA.href}
               aria-label={heroData.secondaryCTA.label}
-              className="px-8 py-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-primary)] font-medium shadow-lg transition hover:bg-[var(--color-border)] text-center"
+              className="px-8 py-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-primary)] font-medium shadow-lg transition hover:bg-[var(--color-border)] text-center"
             >
               {heroData.secondaryCTA.label}
             </a>
