@@ -1,3 +1,5 @@
+
+import { FC } from "react";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Highlights from "@/components/Highlights/Highlights";
@@ -8,7 +10,8 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 
-export default function Home(): JSX.Element {
+const Home: FC = () => {
+
   return (
     <div className=" bg-[var(--color-background)]  "   >
       <Header />
@@ -23,3 +26,5 @@ export default function Home(): JSX.Element {
     </div>
   );
 }
+
+export default Home;
