@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { highlightsIconMap } from "@/lib/highlightsIconMap";
 import { highlightsData } from "@/content/highlightsData";
 
-const Highlights = () => {
+const Highlights: FC = () => {
   return (
     <section
       id="highlights"

@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { contactData } from "@/content/contactData";
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const Contact = () => {
+const Contact: FC = ()  => {
   return (
     <section
       id="contact"

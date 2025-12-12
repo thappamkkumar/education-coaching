@@ -1,5 +1,6 @@
+import type { ContactData } from "@/types/contact";
 
-export const contactData = {
+export const contactData: ContactData = {
 		phone: "+91 00000 00000",
     email: "info@business.com",
     address: "123 Main Street, Your City",

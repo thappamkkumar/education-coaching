@@ -3,13 +3,8 @@
 import Image from "next/image";
 import { FC } from "react";
 import { X } from "lucide-react";
-
-
-interface GalleryModalProps {
-  image: { src: string; alt: string };
-  onClose: () => void;
-}
-
+import type { GalleryModalProps } from "@/types/gallery";
+ 
 const GalleryModal: FC<GalleryModalProps> = ({ image, onClose }) => {
   return (
     <div

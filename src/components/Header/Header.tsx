@@ -1,5 +1,6 @@
 "use client";
 
+import { FC } from "react";
 import { useEffect, useRef, useState } from "react";
 import { headerData } from "@/content/headerData";
 import { logoUrl } from "@/content/siteConfig";
@@ -7,11 +8,11 @@ import Image from "next/image";
 
 type NavItem = { label: string; href: string };
 
-export default function Header() {
+ const Header: FC = () =>    {
   const [activeSection, setActiveSection] = useState<string>("#home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const sectionsRef = useRef<HTMLElement[]>([]);
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Initialize sections on mount
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Header() {
   }, []);
 
   // Scroll spy
-  const handleScroll = () => {
+  const handleScroll = (): void => {
     const scrollY = window.scrollY;
     const offset = window.innerHeight / 2; // trigger point for active link
     let newActive = "#home";
@@ -42,7 +43,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const onScroll = () => {
+    const onScroll = (): void => {
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
       scrollTimeout.current = setTimeout(handleScroll, 50); // debounce
     };
@@ -55,7 +56,7 @@ export default function Header() {
   }, [activeSection]);
 
   // Smooth scroll on link click
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string): void => {
     const target = document.getElementById(id.replace("#", ""));
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -155,3 +156,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default  Header;

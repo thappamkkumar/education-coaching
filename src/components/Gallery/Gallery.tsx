@@ -1,15 +1,16 @@
 "use client";
 
+import { FC } from "react";
 import { useState, useEffect } from "react";
 import { galleryData } from "@/content/galleryData";
 import GalleryGrid from "./GalleryGrid";
 import GalleryPagination from "./GalleryPagination";
 import GalleryModal from "./GalleryModal";
 
-const Gallery = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
-  const [selectedImage, setSelectedImage] = useState<null | { src: string; alt: string }>(null);
+const Gallery: FC = ()  => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(6);
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
   // Responsive items per page
   useEffect(() => {

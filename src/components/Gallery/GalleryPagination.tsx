@@ -2,11 +2,8 @@
 
 import { FC } from "react";
 
-interface GalleryPaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
+import type { GalleryPaginationProps } from "@/types/gallery";
+
 
 const GalleryPagination: FC<GalleryPaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   return (

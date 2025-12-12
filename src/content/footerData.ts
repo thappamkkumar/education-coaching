@@ -1,5 +1,6 @@
+import type { FooterData } from "@/types/footer";
 
-export const footerData = {
+export const footerData: FooterData = {
     copyright:
       "© 2025 Your Business Name. All rights reserved.",
     socialLinks: [

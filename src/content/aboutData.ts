@@ -1,5 +1,9 @@
-	
-export const  aboutData= {
+
+
+import type { AboutData } from "@/types/about";
+
+
+export const  aboutData: AboutData= {
     title: "About Us",
     description:
       "We provide modern, clean, and professional services with a focus on customer satisfaction.",

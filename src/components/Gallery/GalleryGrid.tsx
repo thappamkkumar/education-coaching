@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import { FC } from "react";
-
-interface GalleryGridProps {
-  data: { src: string; alt: string }[];
-  onSelectImage: (item: { src: string; alt: string }) => void;
-}
+import type { GalleryGridProps } from "@/types/gallery";
 
 const GalleryGrid: FC<GalleryGridProps> = ({ data, onSelectImage }) => {
   return (

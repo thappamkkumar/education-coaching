@@ -1,9 +1,14 @@
 "use client";
 
-import { FC } from "react";
 import { Star } from "lucide-react";
+import type { Testimonial } from "@/types/testimonials";
  
-const TestimonialCard  = ({ testimonial }) => {
+interface TestimonialCardProps {
+  testimonial: Testimonial;
+}
+
+
+const TestimonialCard: FC<TestimonialCardProps>  = ({ testimonial }) => {
   return (
     <div
       className="max-w-3xl  mx-auto   bg-[linear-gradient(150deg,var(--color-primary),rgba(255,255,255,0.9))] rounded-2xl p-8 flex flex-col-reverse md:flex-row md:item-center md:justify-between text-left shadow-lg" 

@@ -1,18 +1,5 @@
+import type { SiteConfig } from "@/types/siteConfig";
 
-export const  businessName = "Your Business Name";
-export const logoUrl = "/logo/logo.png";
+export const businessName: SiteConfig["businessName"] = "Your Business Name";
 
- 
-
-
-	
-	
-
-	
-
-	
-
-
-
-
-
+export const logoUrl: SiteConfig["logoUrl"] = "/logo/logo.png";

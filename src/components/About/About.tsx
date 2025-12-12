@@ -1,10 +1,10 @@
  
-
+import { FC } from "react";
 import Image from "next/image";
 import { aboutData } from "@/content/aboutData";
 import { CheckCircle } from "lucide-react"; 
 
-const About = () => {
+const About: FC = ()  => {
   const { title, description, bulletPoints, imageUrl, imageAltText } = aboutData;
 
   return (

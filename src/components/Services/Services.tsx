@@ -1,9 +1,10 @@
-"use client";
+ 
 
+import { FC } from "react";
 import { serviceIconMap } from "@/lib/serviceIconMap";
 import { servicesData } from "@/content/servicesData";
 
-const Services = () => {
+const Services: FC = () => {
   return (
     <section
       id="services"

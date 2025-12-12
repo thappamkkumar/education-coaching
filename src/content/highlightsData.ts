@@ -1,7 +1,5 @@
-export interface HighlightItem {
-  icon: string;
-  text: string;
-}
+import type { HighlightItem } from "@/types/highlights";
+
 
 export const highlightsData: HighlightItem[] = [
   { icon: "award", text: "10+ Years Experience" },

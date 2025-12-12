@@ -1,8 +1,4 @@
-// content/galleryData.ts
-export interface GalleryItem {
-  src: string;
-  alt: string;
-}
+import type { GalleryItem } from "@/types/gallery";
 
 export const galleryData: GalleryItem[] = [
   { src: "/gallery/img.jpg", alt: "Beautiful hair styling example" },

@@ -8,9 +8,9 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
-    <div className="          bg-[var(--color-background)]  "   >
+    <div className=" bg-[var(--color-background)]  "   >
       <Header />
       <Hero />
       <Highlights />

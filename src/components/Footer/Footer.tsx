@@ -1,9 +1,10 @@
+import { FC } from "react";
 import { businessName, logoUrl } from "@/content/siteConfig";
 import { footerData } from "@/content/footerData";
 import { socialIconMap } from "@/lib/socialIconMap";
 import { headerData } from "@/content/headerData";
 
-export const Footer = () => {
+export const Footer: FC = ()  => {
   return (
     <footer
       className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-20 px-6"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import {FC, useState, useEffect } from "react";
 import { testimonialsData } from "@/content/testimonialsData";
 import TestimonialCard from "./TestimonialCard";
 
@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 
-const Testimonials = () => {
+const Testimonials: FC = () => {
   const [current, setCurrent] = useState(0);
   const length = testimonialsData.length;
 

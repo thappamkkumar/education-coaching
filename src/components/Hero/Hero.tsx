@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { heroData } from "@/content/heroData";
 import Image from "next/image";
 
-export default function Hero() {
+ const Hero: FC = () => {
   return (
     <section 
 			id="home"
@@ -79,3 +80,7 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
+export default Hero;
