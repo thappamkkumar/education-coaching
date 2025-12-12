@@ -1,5 +1,6 @@
 "use client";
 
+import { FC } from "react";
 import { Star } from "lucide-react";
 import type { Testimonial } from "@/types/testimonials";
  

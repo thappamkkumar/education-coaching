@@ -6,6 +6,7 @@ import { galleryData } from "@/content/galleryData";
 import GalleryGrid from "./GalleryGrid";
 import GalleryPagination from "./GalleryPagination";
 import GalleryModal from "./GalleryModal";
+import type { GalleryItem } from "@/types/gallery";
 
 const Gallery: FC = ()  => {
   const [currentPage, setCurrentPage] = useState<number>(1);
