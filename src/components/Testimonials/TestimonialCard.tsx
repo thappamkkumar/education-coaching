@@ -15,9 +15,11 @@ const TestimonialCard: FC<TestimonialCardProps>  = ({ testimonial }) => {
       className="max-w-3xl  mx-auto   bg-[linear-gradient(150deg,var(--color-primary),rgba(255,255,255,0.9))] rounded-2xl p-8 flex flex-col-reverse md:flex-row md:item-center md:justify-between text-left shadow-lg" 
     >
 		
-			<div className=" ">
-				<h3 className="text-lg md:text-xl  text-center md:text-start font-bold mb-1 text-[var(--color-text-primary)]"  >
-					{testimonial.name}
+			<div className="pt-4 md:p-0">
+				<h3 className="text-lg md:text-xl  text-center md:text-start font-bold mb-1 text-[var(--color-text-primary)]  flex items-center justify-center md:justify-start gap-3"  >	
+						<span className="w-6 h-[3px] md:h-[4px] bg-[var(--color-text-primary)] inline-block"></span>
+						<span>{testimonial.name}</span>
+						<span className="w-6 h-[3px] md:h-[4px] md:hidden bg-[var(--color-text-primary)] inline-block"></span>
 				</h3>
 				
 				<div className="flex gap-1 mb-2   justify-center md:justify-start">
@@ -32,11 +34,16 @@ const TestimonialCard: FC<TestimonialCardProps>  = ({ testimonial }) => {
 				
 			</div>
 			
-				<img
-        src={testimonial.photo}
-        alt={`Photo of ${testimonial.name}`}
-        className="w-28 h-28 rounded-full border-4 border-[var(--color-primary)] object-cover mx-auto mb-2 md:mx-0 md:mb-0 "
-      />
+				<div className="shrink-0 flex justify-center md:justify-end">
+					<div className="w-28 aspect-square">
+						<img
+							src={testimonial.photo}
+							alt={`Photo of ${testimonial.name}`}
+							className="w-full h-full rounded-full border-4 border-[var(--color-primary)] object-cover"
+						/>
+					</div>
+				</div>
+
     </div>
   );
 };

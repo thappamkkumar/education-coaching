@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { useState, useEffect } from "react";
-import { galleryData } from "@/content/galleryData";
+import { galleryData, GalleryHeading } from "@/content/galleryData";
 import GalleryGrid from "./GalleryGrid";
 import GalleryPagination from "./GalleryPagination";
 import GalleryModal from "./GalleryModal";
@@ -54,10 +54,10 @@ const Gallery: FC = ()  => {
           id="gallery-heading"
           className="text-3xl  md:text-4xl font-bold text-center mb-2 text-[var(--color-text-primary)]"
         >
-          Snapshots of Our Work
+          {GalleryHeading.galleryPrimaryHeading}
         </h2>
         <p className="text-center text-[var(--color-text-secondary)] mb-12 max-w-2xl mx-auto">
-          A curated collection showcasing our projects, creativity, and achievements.
+          {GalleryHeading.gallerySubHeading}
         </p>
 
         <GalleryGrid data={paginatedData} onSelectImage={setSelectedImage} />

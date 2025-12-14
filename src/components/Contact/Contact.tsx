@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { contactData } from "@/content/contactData";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { contactData, contactHeading} from "@/content/contactData";
+import { Phone, Mail, MapPin, Clock  } from "lucide-react";
 
 const Contact: FC = ()  => {
   return (
@@ -16,10 +16,10 @@ const Contact: FC = ()  => {
             id="contact-heading"
             className="text-3xl sm:text-4xl font-extrabold text-[var(--color-text-primary)] mb-4"
           >
-            Get in Touch
+            {contactHeading.contactPrimaryHeading}
           </h2>
           <p className="text-[var(--color-text-secondary)] mb-8">
-            We&apos;d love to hear from you! Reach out for any inquiries or collaborations.
+            {contactHeading.contactSubHeading}
           </p>
 
           {/* Phone */}
@@ -53,8 +53,22 @@ const Contact: FC = ()  => {
               {contactData.address}
             </address>
           </div>
-        </div>
+					
 
+          {/* Open Hours */}
+			    <div className="flex items-start space-x-4">
+            <Clock className="w-6 h-6 mt-1 text-[var(--color-primary)]" />
+            <div className="text-[var(--color-text-secondary)]">
+              {contactData.openHours.map((item, index) => (
+                <p key={index}>
+                  <span className="font-medium">{item.days}:</span>{" "}
+                  {item.hours}
+                </p>
+              ))}
+            </div>
+          </div> 
+        </div>
+			
         {/* Right: Embedded Google Map */}
         <div className="w-full h-64 md:h-full rounded-[var(--radius-base)] overflow-hidden shadow-[var(--shadow-soft)]">
           <iframe

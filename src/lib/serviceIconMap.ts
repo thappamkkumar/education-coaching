@@ -1,18 +1,18 @@
 import {
   Scissors,
-  Sparkles,
-  Brush,
+  Gem,
+  Smile,
+  Hand,
   Palette,
-  Star,
-  Hand
+  Feather
 } from "lucide-react";
-import type { ElementType } from "react";
+
 
 export const serviceIconMap: Record<string, ElementType> = {
   scissors: Scissors,
-  sparkles: Sparkles,
-  brush: Brush,
+  gem: Gem,
+  smile: Smile,
+  hand: Hand,
   palette: Palette,
-  star: Star,
-  hand: Hand
+  feather: Feather
 };

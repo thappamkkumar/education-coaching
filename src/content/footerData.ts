@@ -1,4 +1,4 @@
-import type { FooterData } from "@/types/footer";
+import type { FooterData, FooterHeading } from "@/types/footer";
 
 export const footerData: FooterData = {
     copyright:
@@ -9,3 +9,11 @@ export const footerData: FooterData = {
       { label: "LinkedIn", href: "#" }
     ]
   };
+	
+
+export const footerHeading: FooterHeading = {
+	footerPrimaryHeading : "Your Trusted Beauty & Salon Destination",
+	 
+ 
+}
+

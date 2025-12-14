@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { serviceIconMap } from "@/lib/serviceIconMap";
-import { servicesData } from "@/content/servicesData";
+import { servicesData, servicesHeading } from "@/content/servicesData";
 
 const Services: FC = () => {
   return (
@@ -17,10 +17,10 @@ const Services: FC = () => {
           id="services-heading"
           className="text-3xl md:text-4xl font-bold text-center mb-2 text-[var(--color-text-primary)]"
         >
-          Explore Our Services
+         {servicesHeading.servicePrimaryHeading}
         </h2>
         <p className="text-center text-[var(--color-text-secondary)] mb-12 max-w-2xl mx-auto">
-          Discover the wide range of services we provide to deliver exceptional results.
+          {servicesHeading.servicesSubHeading}
         </p>
 
         {/* GRID */}

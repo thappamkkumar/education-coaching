@@ -1,12 +1,24 @@
 
-import type { Service } from "@/types/services";
+import type { Service, ServiceHeading } from "@/types/services";
+
+
+ 
+
+export const servicesHeading: ServiceHeading = {
+	servicePrimaryHeading : "Explore Our Salon Services",
+	
+	servicesSubHeading : "Discover a wide range of professional beauty and grooming services designed to suit your style and needs.",
+ 
+}
+
 
 
 export const servicesData: Service[] = [
-  { title: "Service One", price: "₹499", icon: "scissors" },
-  { title: "Service Two", price: "₹999", icon: "sparkles" },
-  { title: "Service Three", price: "₹799", icon: "brush" },
-  { title: "Service Four", price: "₹899", icon: "palette" },
-  { title: "Service Five", price: "₹1299", icon: "star" },
-  { title: "Service Six", price: "₹699", icon: "hand" }
+  { title: "Hair Styling & Haircuts", price: "₹499", icon: "scissors" },
+  { title: "Bridal & Party Makeup", price: "₹2,999", icon: "gem" },
+  { title: "Facials & Skin Care", price: "₹799", icon: "smile" },
+  { title: "Manicure & Pedicure", price: "₹599", icon: "hand" },
+  { title: "Hair Coloring & Treatments", price: "₹1299", icon: "palette" },
+  { title: "Waxing & Threading", price: "₹199", icon: "feather" }
 ];
+

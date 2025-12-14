@@ -2,21 +2,21 @@ import type { Testimonial } from "@/types/testimonials";
 
 export const  testimonialsData: Testimonial[]= [
     {
-      name: "Customer One",
+      name: "Priya S.",
       rating: 5,
-      comment: "Amazing service and very professional!",
-      photo: "/testimonial/img.png"
+      comment: "Amazing experience! The staff is very professional and friendly. I loved my haircut and facial. Highly recommended!",
+      photo: "/testimonial/review-1.jpg"
     },
     {
-      name: "Customer Two",
-      rating: 4,
-      comment: "Great experience, would definitely recommend!",
-      photo: "/testimonial/img.png"
+      name: "Anjali K.",
+      rating: 5,
+      comment: "Best salon in the area. Clean, affordable, and excellent service. I always leave feeling confident.",
+      photo: "/testimonial/review-2.jpg"
     },
     {
-      name: "Customer Three",
+      name: "Neha R",
       rating: 5,
-      comment: "Best in town! Super friendly team.",
-      photo: "/testimonial/img.png"
+      comment: "Their makeup service is outstanding. Perfect for parties and weddings. Great attention to detail.",
+      photo: "/testimonial/review-3.jpg"
     },
   ];

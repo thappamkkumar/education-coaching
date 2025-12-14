@@ -1,12 +1,16 @@
 import type { HeroData } from "@/types/hero";
 
 export const  heroData: HeroData =  {
-    heading: "Transform Your Look with Professional Care",
-    subheading: "Modern, clean, and trusted services for every customer.",
+    heading: "Enhance Your Beauty with Expert Salon Care",
+		
+    subheading: "Modern salon services delivered by experienced professionals, helping you look and feel your best for every occasion.",
+		
     primaryCTA: { label: "Call Now", href: "tel:+910000000000" },
     secondaryCTA: { label: "WhatsApp Chat", href: "https://wa.me/910000000000" },
-    primaryimageUrl: "/hero/hero.jpg",
-    secondaryImageUrl: "/hero/hero.jpg",
+		
+    primaryimageUrl: "/hero/hero-1.jpg",
+    secondaryImageUrl: "/hero/hero-2.jpg",
+		
 		primaryAltText: "describe image",
     secondaryAltText: "describe image",   
 

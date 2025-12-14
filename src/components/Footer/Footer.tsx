@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { businessName, logoUrl } from "@/content/siteConfig";
-import { footerData } from "@/content/footerData";
+import { footerLogoUrl, businessName } from "@/content/siteConfig";
+import { footerData, footerHeading } from "@/content/footerData";
 import { socialIconMap } from "@/lib/socialIconMap";
 import { headerData } from "@/content/headerData";
 
@@ -14,20 +14,28 @@ export const Footer: FC = ()  => {
 
         {/* Optimized Thank You Message */}
         <p className="text-[var(--color-text-primary)]   text-center text-3xl md:text-4xl font-bold  ">
-          We appreciate your visit! Stay connected with us.
+          {footerHeading.footerPrimaryHeading}
         </p>
 
         {/* Logo + Business Name */}
-        <div className="flex flex-col items-center space-y-2">
-          <img
-            src={logoUrl}
-            alt={`${businessName} Logo`}
-            className="h-12 w-12   shadow-[var(--shadow-soft)]"
-          />
-          <span className="text-[var(--color-text-primary)] font-bold text-lg md:text-xl">
-            {businessName}
-          </span>
-        </div>
+        
+				<div className="flex justify-center">
+					<img
+						src={footerLogoUrl}
+						alt={`${businessName} Logo`}
+						className="
+							w-32
+							sm:w-40
+							md:w-48
+							lg:w-56
+							xl:w-64
+							h-auto
+							object-contain 
+						"
+						loading="lazy"
+					/>
+				</div>
+
 
         {/* Navigation Links */}
         <nav

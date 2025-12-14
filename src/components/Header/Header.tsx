@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useEffect, useRef, useState } from "react";
 import { headerData } from "@/content/headerData";
-import { logoUrl } from "@/content/siteConfig";
+import { headerLogoUrl, businessName } from "@/content/siteConfig";
 import Image from "next/image";
 
 type NavItem = { label: string; href: string };
@@ -76,12 +76,21 @@ type NavItem = { label: string; href: string };
           aria-label="Go to home"
         >
           <Image
-            src={logoUrl}
-            alt="Logo"
-            width={42}
-            height={42}
-            className="rounded-xl object-cover"
-          />
+						src={headerLogoUrl}
+						alt={`${businessName} Logo`}
+						width={128}
+						height={128}
+						priority
+						className="
+							w-10
+							sm:w-11
+							md:w-11	
+							lg:w-11
+							h-auto
+							object-contain
+						"
+					/>
+
         </button>
 
         {/* Desktop Navigation */}
