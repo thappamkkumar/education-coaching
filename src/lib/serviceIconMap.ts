@@ -6,6 +6,7 @@ import {
   Palette,
   Feather
 } from "lucide-react";
+import type { ElementType } from "react";
 
 
 export const serviceIconMap: Record<string, ElementType> = {

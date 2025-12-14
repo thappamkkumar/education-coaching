@@ -7,7 +7,7 @@ import type { Service, ServiceHeading } from "@/types/services";
 export const servicesHeading: ServiceHeading = {
 	servicePrimaryHeading : "Explore Our Salon Services",
 	
-	servicesSubHeading : "Discover a wide range of professional beauty and grooming services designed to suit your style and needs.",
+	serviceSubHeading : "Discover a wide range of professional beauty and grooming services designed to suit your style and needs.",
  
 }
 

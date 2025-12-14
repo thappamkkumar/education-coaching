@@ -1,4 +1,8 @@
 
+export type OpenHours = {
+  days: string;
+  hours: string;
+};
 
 
 export type ContactData = {

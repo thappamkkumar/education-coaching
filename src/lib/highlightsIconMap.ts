@@ -6,6 +6,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import type { ElementType } from "react";
 
 export const highlightsIconMap: Record<string, ElementType> = {
   award: Award,

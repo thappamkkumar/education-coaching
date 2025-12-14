@@ -20,7 +20,7 @@ const Services: FC = () => {
          {servicesHeading.servicePrimaryHeading}
         </h2>
         <p className="text-center text-[var(--color-text-secondary)] mb-12 max-w-2xl mx-auto">
-          {servicesHeading.servicesSubHeading}
+          {servicesHeading.serviceSubHeading}
         </p>
 
         {/* GRID */}

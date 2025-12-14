@@ -21,7 +21,7 @@ export interface GalleryPaginationProps {
   onPageChange: (page: number) => void;
 }
 
-export type GalleryHeading = {
+export type GalleryHeading  = {
   galleryPrimaryHeading: string;
   gallerySubHeading: string;
 };
