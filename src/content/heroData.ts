@@ -8,10 +8,8 @@ export const  heroData: HeroData =  {
     primaryCTA: { label: "Call Now", href: "tel:+910000000000" },
     secondaryCTA: { label: "WhatsApp Chat", href: "https://wa.me/910000000000" },
 		
-    primaryimageUrl: "/hero/hero-1.jpg",
-    secondaryImageUrl: "/hero/hero-2.jpg",
-		
-		primaryAltText: "describe image",
-    secondaryAltText: "describe image",   
+    smallScreenVideo: "/hero/hero-small.mp4",
+    largeScreenVideo: "/hero/hero-large.mp4",
+		   
 
   };

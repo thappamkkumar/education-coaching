@@ -31,4 +31,6 @@ export const galleryData: GalleryItem[] = [
   { src: "/gallery/img-17.jpg", alt: "Hair coloring example" },  
   { src: "/gallery/img-18.png", alt: "Hair coloring example" },  
   { src: "/gallery/img-19.jpg", alt: "Hair coloring example" },  
+  { src: "/gallery/img-20.jpg", alt: "Hair coloring example" },  
+  { src: "/gallery/img-21.jpg", alt: "Hair coloring example" },  
  ];

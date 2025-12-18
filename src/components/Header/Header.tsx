@@ -1,169 +1,173 @@
 "use client";
 
-import { FC } from "react";
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { headerData } from "@/content/headerData";
 import { headerLogoUrl, businessName } from "@/content/siteConfig";
-import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 type NavItem = { label: string; href: string };
 
- const Header: FC = () =>    {
-  const [activeSection, setActiveSection] = useState<string>("#home");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const sectionsRef = useRef<HTMLElement[]>([]);
-  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+const Header: FC = () => {
+  const [activeSection, setActiveSection] = useState("#home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Initialize sections on mount
+  const sectionsRef = useRef<HTMLElement[]>([]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Scroll handling: update active section & URL hash
   useEffect(() => {
     sectionsRef.current = headerData.navItems
       .map((item) => document.getElementById(item.href.replace("#", "")))
-      .filter((el): el is HTMLElement => el !== null);
+      .filter((el): el is HTMLElement => Boolean(el));
 
-    // Trigger scroll spy once on mount
-    setTimeout(() => handleScroll(), 100);
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+
+      const offset = window.innerHeight * 0.4;
+      let current = "#home";
+
+      for (const section of sectionsRef.current) {
+        if (window.scrollY >= section.offsetTop - offset) {
+          current = `#${section.id}`;
+        }
+      }
+
+      // Update activeSection for styling
+      setActiveSection((prev) => (prev === current ? prev : current));
+
+      // Update URL hash without jump
+      if (current !== window.location.hash) {
+        history.replaceState(null, "", current);
+      }
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll spy
-  const handleScroll = (): void => {
-    const scrollY = window.scrollY;
-    const offset = window.innerHeight / 2; // trigger point for active link
-    let newActive = "#home";
-
-    for (const section of sectionsRef.current) {
-      if (scrollY >= section.offsetTop - offset) {
-        newActive = `#${section.id}`;
-      }
-    }
-
-    if (newActive !== activeSection) {
-      setActiveSection(newActive);
-      history.replaceState(null, "", newActive); // update URL hash without jump
-    }
-  };
-
-  useEffect(() => {
-    const onScroll = (): void => {
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-      scrollTimeout.current = setTimeout(handleScroll, 50); // debounce
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-    };
-  }, [activeSection]);
-
-  // Smooth scroll on link click
-  const scrollToSection = (id: string): void => {
+  // Smooth scroll to section on click
+  const scrollToSection = (id: string) => {
     const target = document.getElementById(id.replace("#", ""));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      setActiveSection(id);
-      setIsMobileMenuOpen(false);
-      history.replaceState(null, "", id); // update URL hash
-    }
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    setIsMobileMenuOpen(false);
+    history.replaceState(null, "", id); // URL also updated on click
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-[var(--color-surface)]/70 border-b border-[var(--color-border)]">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <button
-          onClick={() => scrollToSection("#home")}
-          className="flex items-center gap-3"
-          aria-label="Go to home"
-        >
-          <Image
-						src={headerLogoUrl}
-						alt={`${businessName} Logo`}
-						width={128}
-						height={128}
-						priority
-						className="
-							w-10
-							sm:w-11
-							md:w-11	
-							lg:w-11
-							h-auto
-							object-contain
-						"
-					/>
-
-        </button>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10">
-          {headerData.navItems.map((item: NavItem) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.href)}
-              className={`relative cursor-pointer font-medium transition-colors  duration-200 text-[var(--color-text-primary)] hover:text-[var(--color-primary)] ${
-                activeSection === item.href ? "text-[var(--color-primary)]" : ""
-              }`}
-            >
-              {item.label}
-              {activeSection === item.href && (
-                <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary)] rounded-full" />
-              )}
-            </button>
-          ))}
-        </nav>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className=" cursor-pointer md:hidden text-[var(--color-text-primary)]"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle mobile menu"
-					aria-expanded={isMobileMenuOpen}
-
-        >
-          <div className="space-y-1">
-            <span
-              className={`block w-6 h-0.5 bg-current transition ${
-                isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-              }`}
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? "backdrop-blur-lg bg-[var(--color-background)] text-[var(--color-text-primary)] shadow-sm"
+            : "bg-transparent text-white"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("#home")}
+            aria-label="Go to home"
+            className="bg-[var(--color-background)] rounded-lg"
+          >
+            <Image
+              src={headerLogoUrl}
+              alt={`${businessName} Logo`}
+              width={44}
+              height={44}
+              priority
+              className="object-contain"
             />
-            <span
-              className={`block w-6 h-0.5 bg-current transition ${
-                isMobileMenuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-current transition ${
-                isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-              }`}
-            />
-          </div>
-        </button>
-      </div>
+          </button>
 
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <nav className="md:hidden px-6 pb-4 h-screen overflow-y-auto   ">
-          <ul className="flex flex-col gap-6 mt-2">
-            {headerData.navItems.map((item: NavItem) => (
-              <li key={item.label}>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-10">
+            {headerData.navItems.map((item: NavItem) => {
+              const isActive = activeSection === item.href;
+              return (
                 <button
+                  key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className={`block w-full text-left text-lg font-bold cursor-pointer py-2 transition-colors  duration-200 ${
-                    activeSection === item.href
+                  className={`relative font-medium transition-colors cursor-pointer ${
+                    isActive
                       ? "text-[var(--color-primary)]"
-                      : "text-[var(--color-text-primary)] hover:text-[var(--color-primary)]/50"
+                      : "hover:text-[var(--color-primary)]"
                   }`}
                 >
                   {item.label}
+                  {isActive && (
+                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-[var(--color-primary)] rounded-full" />
+                  )}
                 </button>
-              </li>
-            ))}
-						
-						 
-          </ul>
-        </nav>
-      )}
-    </header>
-  );
-}
+              );
+            })}
+          </nav>
 
-export default  Header;
+          {/* Mobile Open Button */}
+          <button
+            aria-label="Open menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden cursor-pointer"
+          >
+            <Menu size={24} className="text-current" />
+          </button>
+        </div>
+      </header>
+
+      {/* Fullscreen Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] bg-white">
+          <div className="flex items-center justify-between px-6 py-4">
+            <Image
+              src={headerLogoUrl}
+              alt={`${businessName} Logo`}
+              width={44}
+              height={44}
+              className="object-contain"
+            />
+
+            <button
+              aria-label="Close menu"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="cursor-pointer"
+            >
+              <X size={32} className="text-current" />
+            </button>
+          </div>
+
+          <nav className="px-6 pt-12">
+            <ul className="flex flex-col gap-8">
+              {headerData.navItems.map((item: NavItem) => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => scrollToSection(item.href)}
+                    className={`text-xl font-bold cursor-pointer w-full text-left ${
+                      activeSection === item.href
+                        ? "text-[var(--color-primary)]"
+                        : "text-[var(--color-text-primary)]"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Header;
