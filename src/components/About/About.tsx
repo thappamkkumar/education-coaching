@@ -46,7 +46,7 @@ const About: FC = ()  => {
 
         {/* RIGHT IMAGE */}
         <div
-          className="relative w-full h-72 sm:h-80 md:h-96 overflow-hidden  "
+          className="relative w-full h-72 sm:h-80 md:h-96 overflow-hidden rounded-xl   shadow-2xl  "
           
         >
           <Image

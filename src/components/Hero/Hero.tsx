@@ -39,7 +39,7 @@ const Hero: FC = () => {
 
       {/* CONTENT - BOTTOM ALIGNED */}
       <div className="relative max-w-7xl mx-auto px-6 h-full flex items-end">
-        <div className="max-w-2xl pb-16 space-y-8 text-white">
+        <div className="max-w-2xl py-16 md:py-20 space-y-8 text-white">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             {heroData.heading}
           </h1>
