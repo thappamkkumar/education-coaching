@@ -74,7 +74,7 @@ const Header: FC = () => {
             : "bg-transparent text-white"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("#home")}

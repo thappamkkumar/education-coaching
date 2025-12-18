@@ -16,9 +16,9 @@ const Gallery: FC = ()  => {
   // Responsive items per page
   useEffect(() => {
     const updateItemsPerPage = () => {
-      if (window.innerWidth < 640) setItemsPerPage(10);
-      else if (window.innerWidth < 1024) setItemsPerPage(15);
-      else setItemsPerPage(20);
+      if (window.innerWidth < 640) setItemsPerPage(6);
+      else if (window.innerWidth < 1024) setItemsPerPage(8);
+      else setItemsPerPage(10);
     };
     updateItemsPerPage();
     window.addEventListener("resize", updateItemsPerPage);
