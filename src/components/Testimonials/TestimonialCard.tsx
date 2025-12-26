@@ -12,7 +12,7 @@ interface TestimonialCardProps {
 const TestimonialCard: FC<TestimonialCardProps>  = ({ testimonial }) => {
   return (
     <div
-      className="max-w-3xl  mx-auto   bg-[linear-gradient(150deg,var(--color-primary),rgba(255,255,255,0.9))] rounded-2xl p-8 flex flex-col-reverse md:flex-row md:item-center md:justify-between text-left shadow-lg" 
+      className="max-w-3xl  mx-auto   bg-[linear-gradient(150deg,var(--color-primary),rgba(255,255,255,0.9))] rounded-2xl p-8 flex flex-col-reverse md:flex-row md:item-center md:justify-between text-left shadow-lg gap-2	"  
     >
 		
 			<div className="pt-4 md:p-0">
