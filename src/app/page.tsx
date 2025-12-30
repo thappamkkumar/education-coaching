@@ -20,7 +20,7 @@ const Home: FC = () => {
       <About />
       <Services />
       <Gallery />
-      <Testimonials />
+      
       <Contact />
       <Footer />
     </div>

@@ -29,7 +29,7 @@ body {
 
 :root {
   /* Core brand colors */
-  --color-primary: rgba(10,167,167,1);    /* Teal */ 
+  --color-primary:rgba(253, 95, 0, 1);    /* Teal */ 
   --color-accent: #111827;     /* Deep gray for highlights */
 
   /* Base UI colors */
