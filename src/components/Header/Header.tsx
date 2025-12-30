@@ -68,10 +68,10 @@ const Header: FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 text-[var(--color-text-primary)] transition-all duration-300 ${
           isScrolled
-            ? "backdrop-blur-lg bg-[var(--color-background)]/80 text-[var(--color-text-primary)] shadow-sm"
-            : "bg-transparent text-white"
+            ? "backdrop-blur-lg bg-[var(--color-background)]/80  shadow-sm"
+            : "bg-transparent  "
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
@@ -79,7 +79,7 @@ const Header: FC = () => {
           <button
             onClick={() => scrollToSection("#home")}
             aria-label="Go to home"
-            className="bg-[var(--color-background)] rounded-lg"
+            className=" "
           >
             <Image
               src={headerLogoUrl}

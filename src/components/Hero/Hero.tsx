@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from "react"; 
 import { heroData } from "@/content/heroData";
 
 const Hero: FC = () => {
@@ -6,67 +6,79 @@ const Hero: FC = () => {
     <section
       id="home"
       aria-label="Hero Section"
-      className="relative w-full h-screen overflow-hidden"
+      className="
+          w-full    
+        bg-no-repeat bg-cover bg-right
+      "
+      style={{
+        backgroundImage: ` 
+          url(${heroData.backgroundImage})
+        `,
+				 
+      }}
     >
-      {/* BACKGROUND VIDEOS */}
-      <div className="absolute inset-0">
+      <div className="bg-[var(--color-background)]/00 backdrop-blur-md md:backdrop-blur-none  ">
+				
+				
+				<div className="max-w-7xl mx-auto px-6 py-20 min-h-screen  flex flex-col justify-end">
+					
+					{/* CONTENT   FULL WIDTH, LEFT ALIGNED */}
+					<div className="  space-y-8 max-w-2xl">
+						<h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-[var(--color-text-primary)]">
+							{heroData.heading}
+						</h1>
 
-        {/* Small screen video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover md:hidden"
-          src={heroData.smallScreenVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-        />
+						<p className="text-lg md:text-xl text-[var(--color-text-primary)]/90 leading-relaxed">
+							{heroData.subheading}
+						</p>
 
-        {/* Large screen video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover hidden md:block"
-          src={heroData.largeScreenVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-        />
+						<div className="flex flex-col sm:flex-row gap-4 pt-4">
+							<a
+								href={heroData.primaryCTA.href}
+								className="
+									text-center	 
+									px-8 py-3 rounded-full
+									bg-[var(--color-primary)] 
+									text-white font-semibold
+									shadow-lg transition-all
+									hover:bg-[var(--color-primary)]/80 
+								"
+							>
+								{heroData.primaryCTA.label}
+							</a>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/55" />
-      </div>
+							<a
+								href={heroData.secondaryCTA.href}
+								className=" 
+									text-center
+									px-8 py-3 rounded-full
+									border border-2 border-[var(--color-primary)] 
+									bg-[var(--color-primary)]/0 
+									text-[var(--color-primary)]
+									font-semibold
+									transition-all
+									hover:bg-[var(--color-primary)]/50
+								"
+							>
+								{heroData.secondaryCTA.label}
+							</a>
+						</div>
+					</div>
+					
+					
+								 
+				
+				
+				</div>
 
-      {/* CONTENT - BOTTOM ALIGNED */}
-      <div className="relative max-w-7xl mx-auto px-6 h-full flex items-end">
-        <div className="max-w-2xl py-16 md:py-20 space-y-8 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            {heroData.heading}
-          </h1>
+					 
+					
+ 
 
-          <p className="text-lg md:text-xl opacity-90">
-            {heroData.subheading}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <a
-              href={heroData.primaryCTA.href}
-              aria-label={heroData.primaryCTA.label}
-              className="px-8 py-3 rounded-lg bg-[var(--color-primary)] text-white font-medium shadow-lg transition hover:opacity-90 text-center"
-            >
-              {heroData.primaryCTA.label}
-            </a>
-
-            <a
-              href={heroData.secondaryCTA.href}
-              aria-label={heroData.secondaryCTA.label}
-              className="px-8 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur text-white font-medium shadow-lg transition hover:bg-white/20 text-center"
-            >
-              {heroData.secondaryCTA.label}
-            </a>
-          </div>
-        </div>
-      </div>
+				
+				
+				
+			</div>
     </section>
   );
 };

@@ -13,7 +13,7 @@ import Footer from "@/components/Footer/Footer";
 const Home: FC = () => {
 
   return (
-    <div className=" bg-[var(--color-background)]  "   >
+    <div className="  "   >
       <Header />
       <Hero />
       <Highlights />
