@@ -16,8 +16,8 @@ const Home: FC = () => {
     <div className="  "   >
       <Header />
       <Hero />
-      <Highlights />
       <About />
+      <Highlights />
       <Services />
       <Gallery />
       

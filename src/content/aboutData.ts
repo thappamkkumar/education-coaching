@@ -1,24 +1,18 @@
-
-
 import type { AboutData } from "@/types/about";
 
+export const aboutData: AboutData = {
+  title: "About Us",
+  description:
+    "We are a professionally managed learning institution committed to delivering high-quality academic instruction and structured learning solutions. Our approach is rooted in academic rigor, experienced faculty, and well-defined methodologies that support consistent progress and measurable outcomes. Through personalized mentoring, continuous evaluation, and disciplined instructional practices, we help learners build strong foundations and achieve their academic and professional objectives.",
 
-export const  aboutData: AboutData= {
-    title: "About Our Salon",
-    description:
-      "We are a professional beauty and wellness salon dedicated to helping our clients look confident and feel beautiful. Our experienced stylists and beauty experts combine modern techniques with personalized care to deliver exceptional results every time.Whether it`s a regular grooming session or a special occasion makeover, we focus on quality, hygiene, and customer satisfaction in everything we do.",
+  bulletPoints: [
+    "Experienced and qualified faculty members",
+    "Structured and outcome-focused learning programs",
+    "Regular evaluations and progress monitoring",
+    "Personalized guidance and academic support",
+    "Transparent and affordable fee structure",
+  ],
 
-    bulletPoints: [  
-			"Experienced and certified beauty professionals",
-			"Premium-quality products and tools",
-			"Clean, safe, and hygienic environment",
-			"Personalized beauty solutions for every client",
-			"Affordable pricing with no hidden charges",		
-    ],
-		
-		
-    imageUrl: "/about/about.jpg",
-    imageAltText: "About section image",   
-
-  };
-	
+  imageUrl: "/about/about.jpg",
+  imageAltText: "Institution overview",
+};
