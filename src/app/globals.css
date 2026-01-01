@@ -29,19 +29,29 @@ body {
 
 
 :root {
-  /* Brand / Buttons */
-  --color-primary: #b45309;       /* Rich amber / dark gold - main CTA */
-  --color-secondary: #78350f;     /* Darker warm brown - secondary buttons or accents */
-  --color-accent: #f59e0b;        /* Light amber / hover & highlights */
+  /* ================= Brand / Actions ================= */
+  --color-primary: #9a3412;      
+  /* Burnt amber / academic brown - strong CTA contrast on gold */
 
-  /* Base UI / Backgrounds */
-  --color-background: #ffffff;              /* Main page background */
-  --color-surface: rgba(255, 219, 145, 1);  /* Hero or highlight sections */
+  --color-secondary: #78350f;    
+  /* Deep warm brown - secondary buttons, borders */
 
-  /* Typography */
-  --color-text-primary: #1e1e1e;    /* Dark charcoal for headings and main text */
-  --color-text-secondary: #4b5563;  /* Muted gray for subheadings, descriptions */
-  --color-text-tertiary: #ffffff;   /* White for text on dark surfaces or buttons */
+  --color-accent: #fbbf24;      
+  /* Soft amber - hovers, icons, highlights (NOT main buttons) */
+
+  /* ================= Base UI ================= */
+  --color-background: #ffffff;               
+  --color-surface: rgba(190, 160, 100, 1);   
+
+  /* ================= Typography ================= */
+  --color-text-primary: #1f2933;    
+  /* Charcoal - headings, main content */
+
+  --color-text-secondary: #374151;  
+  /* Warm gray - descriptions, labels */
+
+  --color-text-tertiary: #ffffff;   
+  /* On buttons / dark surfaces */
 }
 
 
@@ -79,3 +89,6 @@ html {
   break-inside: avoid;
   margin-bottom: 1rem;
 }
+
+
+
