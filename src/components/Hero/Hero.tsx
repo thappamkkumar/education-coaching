@@ -1,84 +1,113 @@
-import { FC } from "react"; 
+import { FC } from "react";
 import { heroData } from "@/content/heroData";
+import { Phone, MessageCircle } from "lucide-react";
 
 const Hero: FC = () => {
   return (
     <section
       id="home"
       aria-label="Hero Section"
-      className="
-          w-full    
-        bg-no-repeat bg-cover bg-right
-      "
-      style={{
-        backgroundImage: ` 
-          url(${heroData.backgroundImage})
-        `,
-				 
-      }}
+      className="w-full bg-[var(--color-surface)]"
     >
-      <div className="bg-[var(--color-background)]/00 backdrop-blur-md md:backdrop-blur-none  ">
-				
-				
-				<div className="max-w-7xl mx-auto px-6 py-20 min-h-screen  flex flex-col justify-end">
-					
-					{/* CONTENT   FULL WIDTH, LEFT ALIGNED */}
-					<div className="  space-y-8 max-w-2xl">
-						<h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-[var(--color-text-primary)]">
-							{heroData.heading}
-						</h1>
+      <div className=" ">
+        <div
+          className="
+            max-w-7xl mx-auto
+            px-5 sm:px-6 lg:px-8
+          
+            lg:min-h-screen lg:overflow-hidden
+            flex items-end
+          "
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-end w-full   ">
+            
+            {/* ================= LEFT: CONTENT ================= */}
+            <div className="space-y-4 sm:space-y-7   pt-20 lg:pb-10   ">
+              <h1
+                className="
+                  font-extrabold leading-tight text-[var(--color-text-primary)]
+                  text-3xl
+                  sm:text-4xl
+                  md:text-5xl
+                  lg:text-6xl
+                "
+              >
+                {heroData.heading}
+              </h1>
 
-						<p className="text-lg md:text-xl text-[var(--color-text-primary)]/90 leading-relaxed">
-							{heroData.subheading}
-						</p>
+              <p
+                className="
+                  text-[var(--color-text-primary)]/90 leading-relaxed
+                  text-base
+                  sm:text-lg
+                  md:text-lg
+                  lg:text-xl
+                  max-w-xl
+                "
+              >
+                {heroData.subheading}
+              </p>
 
-						<div className="flex flex-col sm:flex-row gap-4 pt-4">
-							<a
-								href={heroData.primaryCTA.href}
-								className="
-									text-center	 
-									px-8 py-3 rounded-full
-									bg-[var(--color-primary)] 
-									text-white font-semibold
-									shadow-lg transition-all
-									hover:bg-[var(--color-primary)]/80 
-								"
-							>
-								{heroData.primaryCTA.label}
-							</a>
+              {/* CTA BUTTONS */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                
+                {/* Primary CTA */}
+                <a
+                  href={heroData.primaryCTA.href}
+                  className="
+                    inline-flex items-center justify-center gap-2
+                    px-8 py-3.5 rounded-full
+                    bg-[var(--color-primary)] text-white
+                    font-semibold
+                    shadow-lg shadow-[var(--color-primary)]/30
+                    transition-all duration-300
+                     
+                    hover:bg-[var(--color-primary)]/90
+                  "
+                >
+                  <Phone className="w-5 h-5  " />
+                  {heroData.primaryCTA.label}
+                </a>
 
-							<a
-								href={heroData.secondaryCTA.href}
-								className=" 
-									text-center
-									px-8 py-3 rounded-full
-									border border-2 border-[var(--color-primary)] 
-									bg-[var(--color-primary)]/0 
-									text-[var(--color-primary)]
-									font-semibold
-									transition-all
-									hover:bg-[var(--color-primary)]/50
-								"
-							>
-								{heroData.secondaryCTA.label}
-							</a>
-						</div>
-					</div>
-					
-					
-								 
-				
-				
-				</div>
+                {/* Secondary CTA */}
+                <a
+                  href={heroData.secondaryCTA.href}
+                  className="
+                    inline-flex items-center justify-center gap-2
+                    px-8 py-3.5 rounded-full
+                    border-2 border-[var(--color-primary)]
+                    text-[var(--color-primary)]
+                    font-semibold
+                    transition-all duration-300
+                    hover:bg-[var(--color-primary)]/20
+                  "
+                >
+                  <MessageCircle className="w-5 h-5 " />
+                  {heroData.secondaryCTA.label}
+                </a>
 
-					 
-					
- 
+              </div>
+            </div>
 
-				
-				
-				
-			</div>
+            {/* ================= RIGHT: IMAGE ================= */}
+            <div className="flex justify-center lg:justify-end items-center  ">
+              <img
+                src={heroData.image.src}
+                alt={heroData.image.alt}
+                className="
+                  h-[50vh]
+                  sm:h-[70vh]
+                  md:h-[80vh]
+                  lg:h-[90vh]
+                  w-auto
+                  object-contain  
+                "
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

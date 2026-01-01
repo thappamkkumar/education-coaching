@@ -7,9 +7,9 @@ import { servicesData, servicesHeading } from "@/content/servicesData";
 const Services: FC = () => {
   return (
     <section
-      id="services"
+      id="courses"
       className="w-full py-20 bg-[var(--color-background)]"
-      aria-labelledby="services-heading"
+      aria-labelledby="courses-heading"
     >
       <div className="max-w-7xl mx-auto px-6">
 

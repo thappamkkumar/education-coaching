@@ -27,25 +27,24 @@ body {
 }
 */
 
-:root {
-  /* Core brand colors */
-  --color-primary:rgba(253, 95, 0, 1);     
-  --color-accent: #111827;      
 
-  /* Base UI colors */
-  --color-background: #ffffff;
-  --color-surface: rgba(255, 219, 145);
-  --color-border: #e5e7eb;
+:root {
+  /* Brand / Buttons */
+  --color-primary: #b45309;       /* Rich amber / dark gold - main CTA */
+  --color-secondary: #78350f;     /* Darker warm brown - secondary buttons or accents */
+  --color-accent: #f59e0b;        /* Light amber / hover & highlights */
+
+  /* Base UI / Backgrounds */
+  --color-background: #ffffff;              /* Main page background */
+  --color-surface: rgba(255, 219, 145, 1);  /* Hero or highlight sections */
 
   /* Typography */
-  --color-text-primary: #000;
-  --color-text-secondary: #6b7280;
-  --color-text-tertiary: #ffffff;
-
-  /* UI effects */
-  --radius-base: 0.75rem;  /* Rounded corners */
-  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --color-text-primary: #1e1e1e;    /* Dark charcoal for headings and main text */
+  --color-text-secondary: #4b5563;  /* Muted gray for subheadings, descriptions */
+  --color-text-tertiary: #ffffff;   /* White for text on dark surfaces or buttons */
 }
+
+
 
 html {
   scroll-behavior: smooth;

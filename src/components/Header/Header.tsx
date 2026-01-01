@@ -70,7 +70,7 @@ const Header: FC = () => {
       <header
         className={`fixed top-0 left-0 w-full z-50 text-[var(--color-text-primary)] transition-all duration-300 ${
           isScrolled
-            ? "backdrop-blur-lg bg-[var(--color-background)]/80  shadow-sm"
+            ? "backdrop-blur-lg bg-[var(--color-surface)]/90  shadow-sm"
             : "bg-transparent  "
         }`}
       >
@@ -155,7 +155,7 @@ const Header: FC = () => {
                     className={`text-xl font-bold cursor-pointer w-full text-left ${
                       activeSection === item.href
                         ? "text-[var(--color-primary)]"
-                        : "text-[var(--color-text-primary)]"
+                        : "text-[var(--color-text-primary)] hover:text-[var(--color-primary)]"
                     }`}
                   >
                     {item.label}
