@@ -23,7 +23,7 @@ const About: FC = ()  => {
 
 					{/* LEFT CONTENT */}
 					<div>
-						<h2 className="text-3xl md:text-4xl font-bold   mb-4    text-[var(--color-text-primary)]">
+						<h2 className="text-4xl md:text-5xl  font-bold   mb-4    text-[var(--color-text-primary)]">
 							{title}
 						</h2>
 

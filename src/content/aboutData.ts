@@ -16,5 +16,5 @@ export const aboutData: AboutData = {
   imageUrl: "/about/about.jpg",
   imageAltText: "Institution overview",
 	
-	aboutBgImageUrl: "/bg/bg1.png",
+	 
 };

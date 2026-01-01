@@ -3,6 +3,5 @@ export type AboutData = {
   description: string;
   bulletPoints: string[];
   imageUrl: string;
-  imageAltText: string;
-  aboutBgImageUrl: string;
+  imageAltText: string; 
 };

@@ -1,40 +1,52 @@
 import { FC } from "react";
 import { highlightsIconMap } from "@/lib/highlightsIconMap";
-import { highlightsData } from "@/content/highlightsData";
+import { highlightsData, bgImage } from "@/content/highlightsData";
 
 const Highlights: FC = () => {
   return (
     <section
       id="highlights"
-      className="w-full py-20"
+			style={{ backgroundImage: `url(${bgImage})` }}
+      className="    relative w-full 	bg-cover bg-top-right bg-no-repeat "
       aria-label="Key highlights"
     >
-      <div
-        className="max-w-7xl mx-auto px-6 
-        grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
-      >
-        {highlightsData.map((item, index) => {
-          const Icon = highlightsIconMap[item.icon];
+			<div className="  bg-[var(--color-background)]/80"  >
 
-          return (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center p-4"
-            >
-              {Icon && (
-                <Icon
-                  className="w-12 h-12 mb-4 opacity-90 text-[var(--color-primary)]"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-              )}
 
-              <p className="text-lg font-bold tracking-wide text-[var(--color-text-primary)]">
-                {item.text}
-              </p>
-            </div>
-          );
-        })}
+				<div className="relative max-w-7xl mx-auto px-6  py-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+					{highlightsData.map((item, index) => {
+						const Icon = highlightsIconMap[item.icon];
+
+						return (
+							<div
+								key={index}
+								className="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+							>
+								{/* Image at top */}
+								<div className="relative w-full h-48">
+									<img
+										src={item.image}
+										alt={item.text}
+										className="w-full h-full object-cover"
+									/>
+									{/* Bigger Icon over the image */}
+									{Icon && (
+										<div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-[var(--color-primary)] w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+											<Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
+										</div>
+									)}
+								</div>
+
+								{/* Text */}
+								<div className="flex-1 px-6 pt-10 pb-6 text-center">
+									<p className="text-[var(--color-primary)] font-bold text-lg tracking-wide">
+										{item.text}
+									</p>
+								</div>
+							</div>
+						);
+					})}
+				</div>
       </div>
     </section>
   );
