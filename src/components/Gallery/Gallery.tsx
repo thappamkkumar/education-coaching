@@ -52,14 +52,11 @@ const Gallery: FC = ()  => {
       <div className="max-w-7xl mx-auto px-6">
          <h2
           id="gallery-heading"
-          className="text-3xl  md:text-4xl font-bold text-center mb-2 text-[var(--color-text-primary)]"
+          className="text-3xl  md:text-4xl font-bold text-center mb-12 text-[var(--color-text-primary)]"
         >
           {GalleryHeading.galleryPrimaryHeading}
         </h2>
-        <p className="text-center text-[var(--color-text-secondary)] mb-12 max-w-2xl mx-auto">
-          {GalleryHeading.gallerySubHeading}
-        </p>
-
+         
         <GalleryGrid data={paginatedData} onSelectImage={setSelectedImage} />
 
         {galleryData.length > itemsPerPage && (

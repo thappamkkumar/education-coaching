@@ -1,7 +1,7 @@
 import type { HighlightItem, BgImage } from "@/types/highlights";
 
 
-export const bgImage: BgImage =  "/bg/bg2.png";
+export const bgImage: BgImage =  "/bg/bg3.png";
 
 export const highlightsData: HighlightItem[] = [
   {

@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Highlights from "@/components/Highlights/Highlights";
 import About from "@/components/About/About";
-import Services from "@/components/Services/Services";
+import Courses from "@/components/Courses/Courses";
 import Gallery from "@/components/Gallery/Gallery";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Contact from "@/components/Contact/Contact";
@@ -18,7 +18,7 @@ const Home: FC = () => {
       <Hero />
       <About />
       <Highlights />
-      <Services />
+      <Courses />
       <Gallery />
       
       <Contact />

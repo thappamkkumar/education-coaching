@@ -1,13 +1,9 @@
 import type { GalleryItem, GalleryHeading as GalleryHeadingType } from "@/types/gallery";
 
 
-
-export const GalleryHeading: GalleryHeadingType  = {
-	galleryPrimaryHeading : "Our Work & Transformations",
-	
-	gallerySubHeading : "A glimpse of our recent work, showcasing real transformations and satisfied clients.",
- 
-}
+export const GalleryHeading: GalleryHeadingType = {
+  galleryPrimaryHeading: "Our Students & Success Stories",
+};
 
 
 

@@ -27,31 +27,21 @@ body {
 }
 */
 
-
 :root {
   /* ================= Brand / Actions ================= */
-  --color-primary: #9a3412;      
-  /* Burnt amber / academic brown - strong CTA contrast on gold */
-
-  --color-secondary: #78350f;    
-  /* Deep warm brown - secondary buttons, borders */
-
-  --color-accent: #fbbf24;      
-  /* Soft amber - hovers, icons, highlights (NOT main buttons) */
+  --color-primary: #1f3c55;        /* new deep navy primary */
+  --color-secondary: #05676d;      /* teal-dark for borders / secondary buttons */
+  --color-accent: #fbbf24;         /* amber highlights / small icons */
 
   /* ================= Base UI ================= */
-  --color-background: #ffffff;               
-  --color-surface: rgba(190, 160, 100, 1);   
+  --color-background: #fff;     /* light neutral background */
+  --color-surface: #76bbaa;        /* hero sections / highlighted cards */
 
   /* ================= Typography ================= */
-  --color-text-primary: #1f2933;    
-  /* Charcoal - headings, main content */
-
-  --color-text-secondary: #374151;  
-  /* Warm gray - descriptions, labels */
-
-  --color-text-tertiary: #ffffff;   
-  /* On buttons / dark surfaces */
+  --color-text-primary: #1f2933;       /* dark charcoal for light background */
+  --color-text-secondary: #374151;     /* muted gray text */
+  --color-text-on-surface: #f0fdfa;    /* light text on surface sections */
+  --color-text-accent-on-surface: #ffe27d; /* amber/light accent on surface */
 }
 
 

@@ -6,10 +6,11 @@ const Hero: FC = () => {
   return (
     <section
       id="home"
-      aria-label="Hero Section"
-      className="w-full bg-[var(--color-surface)]"
+      aria-label="Hero Section" 
+			style={{ backgroundImage: `url('/hero/bg.png')` }}
+      className="    relative w-full  	bg-cover bg-top-right bg-no-repeat "
     >
-      <div className=" ">
+      <div className="bg-[var(--color-surface)]/90	 ">
         <div
           className="
             max-w-7xl mx-auto
