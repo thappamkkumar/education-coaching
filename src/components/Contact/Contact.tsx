@@ -1,86 +1,105 @@
 import { FC } from "react";
-import { contactData, contactHeading} from "@/content/contactData";
-import { Phone, Mail, MapPin, Clock  } from "lucide-react";
+import { contactData, contactHeading } from "@/content/contactData";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
-const Contact: FC = ()  => {
+const Contact: FC = () => {
   return (
     <section
       id="contact"
-      className="py-20  "
+      className="py-20 bg-[var(--color-background)]"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-2">
-        {/* Left: Contact Info */}
-        <div className="flex flex-col justify-center  ">
-          <h2
-            id="contact-heading"
-            className="text-3xl sm:text-4xl font-extrabold text-[var(--color-text-primary)] mb-4"
-          >
-            {contactHeading.contactPrimaryHeading}
-          </h2>
-          <p className="text-[var(--color-text-secondary)] mb-8">
-            {contactHeading.contactSubHeading}
-          </p>
-
-          {/* Phone */}
-          <div className="flex items-center space-x-4 mb-6">
-            <Phone className="w-6 h-6 text-[var(--color-primary)]" />
-            <a
-              href={`tel:${contactData.phone}`}
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
-              aria-label={`Call us at ${contactData.phone}`}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid gap-12 md:grid-cols-2 items-start">
+          {/* Left Content */}
+          <div>
+            <h2
+              id="contact-heading"
+              className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)]"
             >
-              {contactData.phone}
-            </a>
-          </div>
+              {contactHeading.contactPrimaryHeading}
+            </h2>
 
-          {/* Email */}
-          <div className="flex items-center space-x-4 mb-6">
-            <Mail className="w-6 h-6 text-[var(--color-primary)]" />
-            <a
-              href={`mailto:${contactData.email}`}
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
-              aria-label={`Email us at ${contactData.email}`}
-            >
-              {contactData.email}
-            </a>
-          </div>
+            <p className="mt-4 max-w-xl text-[var(--color-text-secondary)]">
+              {contactHeading.contactSubHeading}
+            </p>
 
-          {/* Address */}
-          <div className="flex items-start space-x-4 mb-6">
-            <MapPin className="w-6 h-6 mt-1 text-[var(--color-primary)]" />
-            <address className="not-italic text-[var(--color-text-secondary)]">
-              {contactData.address}
-            </address>
-          </div>
-					
+            <div className="mt-10 space-y-6">
+              {/* Phone */}
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-[var(--color-primary)] mt-1" />
+                <div>
+                  <p className="font-medium text-[var(--color-text-primary)]">
+                    Phone
+                  </p>
+                  <a
+                    href={`tel:${contactData.phone}`}
+                    className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
+                  >
+                    {contactData.phone}
+                  </a>
+                </div>
+              </div>
 
-          {/* Open Hours */}
-			    <div className="flex items-start space-x-4">
-            <Clock className="w-6 h-6 mt-1 text-[var(--color-primary)]" />
-            <div className="text-[var(--color-text-secondary)]">
-              {contactData.openHours.map((item, index) => (
-                <p key={index}>
-                  <span className="font-medium">{item.days}:</span>{" "}
-                  {item.hours}
-                </p>
-              ))}
+              {/* Email */}
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-[var(--color-primary)] mt-1" />
+                <div>
+                  <p className="font-medium text-[var(--color-text-primary)]">
+                    Email
+                  </p>
+                  <a
+                    href={`mailto:${contactData.email}`}
+                    className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
+                  >
+                    {contactData.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-[var(--color-primary)] mt-1" />
+                <div>
+                  <p className="font-medium text-[var(--color-text-primary)]">
+                    Address
+                  </p>
+                  <address className="not-italic text-[var(--color-text-secondary)]">
+                    {contactData.address}
+                  </address>
+                </div>
+              </div>
+
+              {/* Open Hours */}
+              <div className="flex items-start gap-4">
+                <Clock className="w-6 h-6 text-[var(--color-primary)] mt-1" />
+                <div>
+                  <p className="font-medium text-[var(--color-text-primary)]">
+                    Working Hours
+                  </p>
+                  <div className="text-[var(--color-text-secondary)]">
+                    {contactData.openHours.map((item, index) => (
+                      <p key={index}>
+                        <span className="font-medium">{item.days}:</span>{" "}
+                        {item.hours}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div> 
-        </div>
-			
-        {/* Right: Embedded Google Map */}
-        <div className="w-full h-64 md:h-full rounded-[var(--radius-base)] overflow-hidden shadow-[var(--shadow-soft)]">
-          <iframe
-            src={contactData.mapEmbedUrl}
-            title="Our Location"
-            width="100%"
-            height="100%"
-            className="border-0"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          </div>
+
+          {/* Right Map */}
+          <div className="w-full overflow-hidden rounded-xl border">
+            <iframe
+              src={contactData.mapEmbedUrl}
+              title="Our Location"
+              className="w-full h-[360px] md:h-[420px] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </section>

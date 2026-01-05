@@ -17,11 +17,10 @@ export const contactData: ContactData = {
 		],
   };
 	
-	
 export const contactHeading: ContactHeading = {
-	contactPrimaryHeading : "Get in Touch With Us",
-	
-	contactSubHeading : "Have questions or want to book an appointment? Contact us today and let our beauty experts take care of you.",
- 
-}
+  contactPrimaryHeading: "Contact & Visit Our Center",
+  contactSubHeading:
+    "Have questions about courses or admissions? Reach out to us or visit our center for personalized guidance.",
+};
+
  
