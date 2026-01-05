@@ -1,7 +1,4 @@
-export interface CTA {
-  label: string;
-  href: string;
-}
+ 
 
 export interface HeroImage {
   src: string;
@@ -10,8 +7,6 @@ export interface HeroImage {
 
 export interface HeroData {
   heading: string;
-  subheading: string;
-  primaryCTA: CTA;
-  secondaryCTA: CTA;
+  subheading: string; 
   image: HeroImage;
 }

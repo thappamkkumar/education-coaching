@@ -4,7 +4,8 @@ import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { headerData } from "@/content/headerData";
 import { headerLogoUrl, businessName } from "@/content/siteConfig";
-import { Menu, X } from "lucide-react";
+import { Menu, X,Phone } from "lucide-react";
+import { ctaData } from "@/content/ctaData"; 
 
 type NavItem = { label: string; href: string };
 
@@ -112,6 +113,14 @@ const Header: FC = () => {
                 </button>
               );
             })}
+						
+						 <a
+                  href={ctaData.primaryAction.href}
+                  className=" inline-flex items-center justify-center gap-2  px-3 py-3 lg:px-4  lg:py-2 rounded-full  bg-[var(--color-primary)] text-white font-semibold  shadow-lg shadow-[var(--color-primary)]/30  transition-all duration-300 hover:bg-[var(--color-primary)]/90"
+                >
+                  <Phone className="w-5 h-5  " />
+                  <span className="hidden lg:block">{ctaData.primaryAction.label}</span>
+                </a>
           </nav>
 
           {/* Mobile Open Button */}

@@ -6,6 +6,7 @@ export const  headerData: HeaderData= {
       { label: "About", href: "#about" },
       { label: "Courses", href: "#courses" },
       { label: "Results", href: "#results" },
+      { label: "Faculty", href: "#faculty" }, 
       { label: "Contact", href: "#contact" }
     ]
   };

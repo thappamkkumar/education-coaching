@@ -25,8 +25,8 @@ const Testimonials = () => {
 
   return (
     <section
-			   className="  w-full py-20  bg-[var(--color-background)] "   
-			 aria-labelledby="results"
+			className="  w-full py-20  bg-[var(--color-background)] "   
+			aria-labelledby="testimonials"
 			id="testimonials"
 			>
 

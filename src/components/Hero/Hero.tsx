@@ -1,8 +1,11 @@
 import { FC } from "react";
 import { heroData } from "@/content/heroData";
+import { ctaData } from "@/content/ctaData";
 import { Phone, MessageCircle } from "lucide-react";
 
 const Hero: FC = () => {
+	const {   primaryAction, secondaryAction } = ctaData;
+
   return (
     <section
       id="home"
@@ -10,7 +13,7 @@ const Hero: FC = () => {
 			style={{ backgroundImage: `url('/bg/bg3.png')` }}
       className="    relative w-full  	bg-cover bg-bottom-right bg-no-repeat "
     >
-      <div className="bg-[var(--color-background)]/90	shadow-inner ">
+      <div className="bg-[var(--color-background)]/90	   ">
         <div
           className=" max-w-7xl mx-auto px-5 sm:px-6 lg:px-8
             lg:min-h-screen lg:overflow-hidden flex items-end   "
@@ -36,20 +39,20 @@ const Hero: FC = () => {
                 
                 {/* Primary CTA */}
                 <a
-                  href={heroData.primaryCTA.href}
+                  href={primaryAction.href}
                   className=" inline-flex items-center justify-center gap-2  px-8 py-3.5 rounded-full  bg-[var(--color-primary)] text-white font-semibold  shadow-lg shadow-[var(--color-primary)]/30  transition-all duration-300 hover:bg-[var(--color-primary)]/90"
                 >
                   <Phone className="w-5 h-5  " />
-                  {heroData.primaryCTA.label}
+                  {primaryAction.label}
                 </a>
 
                 {/* Secondary CTA */}
                 <a
-                  href={heroData.secondaryCTA.href}
+                  href={secondaryAction.href}
                   className=" inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-semibold transition-all duration-300 hover:bg-[var(--color-primary)]/20  "
                 >
                   <MessageCircle className="w-5 h-5 " />
-                  {heroData.secondaryCTA.label}
+                  {secondaryAction.label}
                 </a>
 
               </div>
