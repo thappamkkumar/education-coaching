@@ -26,6 +26,7 @@ const Home: FC = () => {
       <TeachingMethodology /> 
       <Faculty /> 
       
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

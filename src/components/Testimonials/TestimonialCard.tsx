@@ -1,49 +1,47 @@
-"use client";
+import { Quote, Star } from "lucide-react";
+import { TestimonialItem } from "@/types/testimonial";
 
-import { FC } from "react";
-import { Star } from "lucide-react";
-import type { Testimonial } from "@/types/testimonials";
- 
-interface TestimonialCardProps {
-  testimonial: Testimonial;
+interface Props {
+  data: TestimonialItem;
 }
 
-
-const TestimonialCard: FC<TestimonialCardProps>  = ({ testimonial }) => {
+const TestimonialCard = ({ data }: Props) => {
   return (
     <div
-      className="max-w-3xl  mx-auto   bg-[linear-gradient(150deg,var(--color-primary),rgba(255,255,255,0.9))] rounded-2xl p-8 flex flex-col-reverse md:flex-row md:item-center md:justify-between text-left shadow-lg gap-2	"  
+      data-card
+      className=" flex-shrink-0 w-[85vw] sm:w-[320px] lg:w-[360px]  bg-white rounded-3xl p-6    border-4 border-[var(--color-accent)]/70          "
     >
-		
-			<div className="pt-4 md:p-0">
-				<h3 className="text-lg md:text-xl  text-center md:text-start font-bold mb-1 text-[var(--color-text-primary)]  flex items-center justify-center md:justify-start gap-3"  >	
-						<span className="w-6 h-[3px] md:h-[4px] bg-[var(--color-text-primary)] inline-block"></span>
-						<span>{testimonial.name}</span>
-						<span className="w-6 h-[3px] md:h-[4px] md:hidden bg-[var(--color-text-primary)] inline-block"></span>
-				</h3>
-				
-				<div className="flex gap-1 mb-2   justify-center md:justify-start">
-					{Array.from({ length: testimonial.rating }).map((_, i) => (
-						<Star key={i} className="w-4 h-4 text-[var(--color-text-primary)]/80" />
-					))}
-				</div>
-				
-				
-				<p className="text-base leading-relaxed text-[var(--color-text-primary)]  text-center md:text-start">{testimonial.comment}</p>
-				
-				
-			</div>
-			
-				<div className="shrink-0 flex justify-center md:justify-end">
-					<div className="w-28 aspect-square">
-						<img
-							src={testimonial.photo}
-							alt={`Photo of ${testimonial.name}`}
-							className="w-full h-full rounded-full border-4 border-[var(--color-primary)] object-cover"
-						/>
-					</div>
-				</div>
+      {/* Quote */}
+      <Quote className="w-8 h-8 text-[var(--color-accent)] mb-3" />
 
+      {/* Message */}
+      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+        "{data.message}"
+      </p>
+
+      {/* Rating */}
+      {data.rating && (
+        <div className="flex gap-1 mt-4">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star
+              key={i}
+              className={`w-4 h-4 ${
+                i < data.rating
+                  ? "fill-[var(--color-accent)] text-[var(--color-accent)]"
+                  : "text-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Divider */}
+      <div className="w-10 h-1 bg-[var(--color-accent)] rounded-full my-4"></div>
+
+      {/* Name */}
+      <h4 className="font-semibold text-[var(--color-text-primary)]">
+        {data.name}
+      </h4>
     </div>
   );
 };

@@ -12,17 +12,19 @@ const Courses: FC = () => {
       aria-labelledby="courses"
     >
       <div className="max-w-7xl mx-auto px-6">
-
-         <h2
-          id="services-heading"
-          className="text-3xl md:text-4xl font-bold   mb-2 text-[var(--color-text-primary)]"
-        >
-         {coursesHeading.coursesPrimaryHeading}
-        </h2>
-			 
-				<p className="mt-2 max-w-2xl mb-12 text-[var(--color-text-secondary)]">
-					{coursesHeading.coursesSecondaryHeading}
-				</p>
+				
+				{/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)]">
+            {coursesHeading.coursesPrimaryHeading}
+          </h2>
+          {coursesHeading.coursesSecondaryHeading && (
+            <p className="mt-3 text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+							 {coursesHeading.coursesSecondaryHeading}
+            </p>
+          )}
+        </div>
+ 
 
          
 

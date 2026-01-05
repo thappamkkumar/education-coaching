@@ -1,22 +1,43 @@
-import type { Testimonial } from "@/types/testimonials";
+import { TestimonialItem } from "@/types/testimonial";
 
-export const  testimonialsData: Testimonial[]= [
-    {
-      name: "Priya S.",
-      rating: 5,
-      comment: "Amazing experience! The staff is very professional and friendly. I loved my haircut and facial. Highly recommended!",
-      photo: "/testimonial/review-1.jpg"
-    },
-    {
-      name: "Anjali K.",
-      rating: 5,
-      comment: "Best salon in the area. Clean, affordable, and excellent service. I always leave feeling confident.",
-      photo: "/testimonial/review-2.jpg"
-    },
-    {
-      name: "Neha R",
-      rating: 5,
-      comment: "Their makeup service is outstanding. Perfect for parties and weddings. Great attention to detail.",
-      photo: "/testimonial/review-3.jpg"
-    },
-  ];
+export const testimonialsSection = {
+  heading: "What Our Students Say",
+  subHeading: "Real feedback from students and parents who trust our results",
+};
+
+export const testimonialsData: TestimonialItem[] = [
+  {
+    id: "1",
+    name: "Rahul Sharma",
+    message:
+      "The faculty guidance and structured study plan helped me clear my exam in the first attempt.",
+    rating: 5,
+  },
+  {
+    id: "2",
+    name: "Anjali Verma",
+    message:
+      "Small batch size and regular assessments improved my confidence a lot.",
+    rating: 5,
+  },
+  {
+    id: "3",
+    name: "Amit Kumar",
+    message:
+      "Concept clarity and mentorship support are the strongest points here.",
+    rating: 4,
+  },{
+    id: "4",
+    name: "Anjali Verma",
+    message:
+      "Small batch size and regular assessments improved my confidence a lot.",
+    rating: 5,
+  },
+  {
+    id: "5",
+    name: "Amit Kumar",
+    message:
+      "Concept clarity and mentorship support are the strongest points here.",
+    rating: 4,
+  },
+];

@@ -28,7 +28,7 @@ const Results = () => {
   return (
     <section 
 			style={{ backgroundImage: `url('/bg/bg1.jpg')` }} 
-			className=" bg-[var(--color-primary)] relative bg-cover bg-bottom-right bg-no-repeat"  
+			className="   relative bg-cover bg-center bg-no-repeat"  
 			id="results" aria-labelledby="results"
 		>
       <div className="  w-full py-20  bg-[var(--color-primary)]/90"  >

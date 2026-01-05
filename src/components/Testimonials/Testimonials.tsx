@@ -1,83 +1,69 @@
 "use client";
 
-import {FC, useState, useEffect } from "react";
-import { testimonialsData } from "@/content/testimonialsData";
-import TestimonialCard from "./TestimonialCard";
-
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { testimonialsData, testimonialsSection } from "@/content/testimonialsData";
+import TestimonialsGrid from "./TestimonialsGrid";
 
+const Testimonials = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
 
-const Testimonials: FC = () => {
-  const [current, setCurrent] = useState(0);
-  const length = testimonialsData.length;
+    const card = scrollRef.current.children[0] as HTMLElement;
+    if (!card) return;
 
-  // Auto slide every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [length]);
+    const gap = 24;
+    const amount = card.offsetWidth + gap;
 
-  if (length === 0) {
-    return (
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center ">
-          No testimonials available.
-        </div>
-      </section>
-    );
-  }
-
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % length);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + length) % length);
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <section className="py-20 ">
-      <div className="max-w-7xl mx-auto ">
-        <h2
-          id="testimonials-heading"
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--color-text-primary)]"
-        > What Our Customers Say
-        </h2>
+    <section
+			style={{ backgroundImage: `url('/bg/bg1.jpg')` }} 
+			className="  relative bg-cover bg-left-bottom bg-no-repeat"  
+			 aria-labelledby="results"
+			id="testimonials"
+			>
+			<div className="  w-full py-20  bg-[var(--color-primary)]/90"  >
 
-        <div className="relative    pb-5   overflow-hidden">
-          <div
-            className=" flex transition-transform duration-500"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {testimonialsData.map((testimonial, index) => (
-              <div key={index} className="flex-shrink-0  w-full px-6">
-                <TestimonialCard testimonial={testimonial} />
-              </div>
-            ))}
-          </div>
+				<div className="max-w-7xl mx-auto  px-6">
+					
+					{/* Header (same as Results) */}
+					<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
+						<div className="mb-8">
+							<h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-on-surface)]">
+								{testimonialsSection.heading}
+							</h2>
+							<p className="mt-2 max-w-xl text-[var(--color-text-accent-on-surface)]">
+								{testimonialsSection.subHeading}
+							</p>
+						</div>
 
-          {/* Arrows */}
-          {length > 1 && (
-            <>
-              <button
-                onClick={prevSlide}
-                className="absolute top-1/2 left-1 -translate-y-1/2  p-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-primary)] shadow-lg cursor-pointer transition hover:bg-[var(--color-border)]"
-                aria-label="Previous Slide"
-              >
-                <ChevronLeft />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute top-1/2 right-1 -translate-y-1/2   p-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-primary)] shadow-lg cursor-pointer transition hover:bg-[var(--color-border)]"
-                aria-label="Next Slide"
-              >
-                <ChevronRight />
-              </button>
-            </>
-          )}
-        </div>
+						<div className="flex justify-end gap-3">
+							<button
+								onClick={() => scroll("left")}
+								className="cursor-pointer h-10 w-10 rounded-full bg-white text-[var(--color-primary)] shadow hover:scale-105 transition"
+							>
+								<ChevronLeft className="mx-auto" />
+							</button>
+							<button
+								onClick={() => scroll("right")}
+								className="cursor-pointer h-10 w-10 rounded-full bg-white text-[var(--color-primary)] shadow hover:scale-105 transition"
+							>
+								<ChevronRight className="mx-auto" />
+							</button>
+						</div>
+					</div>
 
- 
-       
-      </div>
+					<TestimonialsGrid scrollRef={scrollRef} items={testimonialsData} />
+				</div>
+			</div>
     </section>
   );
 };
