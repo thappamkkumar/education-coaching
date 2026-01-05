@@ -20,7 +20,7 @@ const Highlights: FC = () => {
 						return (
 							<div
 								key={index}
-								className="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl group transition-shadow duration-300 overflow-hidden"
+								className="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl group transition-shadow duration-300 overflow-hidden cursor-pointer "
 							>
 								{/* Image at top */}
 								<div className="relative w-full h-48">

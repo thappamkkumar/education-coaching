@@ -39,9 +39,9 @@ const Courses: FC = () => {
 									className="group relative bg-white rounded-2xl
 														 shadow-md border border-black/5
 														 p-6 md:p-7
-														 overflow-hidden
+														 overflow-hidden cursor-pointer 
 														 transition-all duration-500
-														 hover:shadow-xl"
+														 hover:shadow-xl "
 								>
 									{/* Right side accent */}
 									<div
