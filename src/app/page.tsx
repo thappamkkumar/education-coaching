@@ -6,6 +6,8 @@ import Highlights from "@/components/Highlights/Highlights";
 import About from "@/components/About/About";
 import Courses from "@/components/Courses/Courses"; 
 import Results from "@/components/Result/Results"; 
+import TeachingMethodology from "@/components/Teaching/TeachingMethodology"; 
+
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
@@ -20,6 +22,7 @@ const Home: FC = () => {
       <Highlights />
       <Courses /> 
       <Results /> 
+      <TeachingMethodology /> 
       
       <Contact />
       <Footer />

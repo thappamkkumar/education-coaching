@@ -9,7 +9,7 @@ const ResultsControls = ({ onScroll }: Props) => {
     <div className="flex gap-3">
       <button
         onClick={() => onScroll("left")}
-        className="h-10 w-10 rounded-full bg-white text-[var(--color-primary)] shadow hover:scale-105 transition"
+        className="cursor-pointer h-10 w-10 rounded-full bg-white text-[var(--color-primary)] shadow hover:scale-105 transition"
         aria-label="Previous"
       >
         <ChevronLeft className="mx-auto" />
@@ -17,7 +17,7 @@ const ResultsControls = ({ onScroll }: Props) => {
 
       <button
         onClick={() => onScroll("right")}
-        className="h-10 w-10 rounded-full bg-white text-[var(--color-primary)] shadow hover:scale-105 transition"
+        className="cursor-pointer h-10 w-10 rounded-full bg-white text-[var(--color-primary)] shadow hover:scale-105 transition"
         aria-label="Next"
       >
         <ChevronRight className="mx-auto" />
