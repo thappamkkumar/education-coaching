@@ -9,13 +9,13 @@ const TestimonialCard = ({ data }: Props) => {
   return (
     <div
       data-card
-      className=" flex-shrink-0 w-[85vw] sm:w-[320px] lg:w-[360px]  bg-white rounded-3xl p-6    border-4 border-[var(--color-accent)]/70          "
+      className=" flex-shrink-0 w-[85vw] sm:w-[320px] lg:w-[360px]  bg-white rounded-3xl p-6  shadow-lg  border  border-[var(--color-secondary)] transition-transform duration-300 ease-in-out  hover:shadow-2xl hover:-translate-y-2 "
     >
       {/* Quote */}
-      <Quote className="w-8 h-8 text-[var(--color-accent)] mb-3" />
+      <Quote className="w-8 h-8 text-[var(--color-secondary)]/50 mb-3" />
 
       {/* Message */}
-      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+      <p className="text-sm text-[var(--color-text-primary)] leading-relaxed">
         "{data.message}"
       </p>
 
@@ -36,7 +36,7 @@ const TestimonialCard = ({ data }: Props) => {
       )}
 
       {/* Divider */}
-      <div className="w-10 h-1 bg-[var(--color-accent)] rounded-full my-4"></div>
+      <div className="w-10 h-1 bg-[var(--color-secondary)]/50 rounded-full my-4"></div>
 
       {/* Name */}
       <h4 className="font-semibold text-[var(--color-text-primary)]">
