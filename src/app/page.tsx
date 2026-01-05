@@ -10,6 +10,7 @@ import TeachingMethodology from "@/components/Teaching/TeachingMethodology";
 import Faculty from "@/components/Faculty/Faculty"; 
 
 import Testimonials from "@/components/Testimonials/Testimonials";
+import Cta from "@/components/Cta/Cta";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 
@@ -27,6 +28,7 @@ const Home: FC = () => {
       <Faculty /> 
       
       <Testimonials />
+      <Cta	 />
       <Contact />
       <Footer />
     </div>
