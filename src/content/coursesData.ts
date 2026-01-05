@@ -5,7 +5,8 @@ import type { Courses, CoursesHeading } from "@/types/courses";
  
 
 export const coursesHeading: CoursesHeading = {
-	coursesPrimaryHeading : "Courses Offered",
+	coursesPrimaryHeading : "Courses We Offer",
+	coursesSecondaryHeading : "Focused batches with personalized mentoring and proven teaching methods",
 	  
 }
 

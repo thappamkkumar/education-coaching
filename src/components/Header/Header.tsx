@@ -70,7 +70,7 @@ const Header: FC = () => {
       <header
         className={`fixed top-0 left-0 w-full z-50 text-[var(--color-text-primary)] transition-all duration-300 ${
           isScrolled
-            ? "backdrop-blur-lg bg-[var(--color-surface)]/90  shadow-sm"
+            ? "backdrop-blur-lg bg-[var(--color-background)]   shadow-sm"
             : "bg-transparent  "
         }`}
       >

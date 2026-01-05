@@ -9,16 +9,21 @@ const Courses: FC = () => {
     <section
       id="courses"
       className="w-full py-20 bg-[var(--color-background)]"
-      aria-labelledby="courses-heading"
+      aria-labelledby="courses"
     >
       <div className="max-w-7xl mx-auto px-6">
 
          <h2
           id="services-heading"
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--color-text-primary)]"
+          className="text-3xl md:text-4xl font-bold   mb-2 text-[var(--color-text-primary)]"
         >
          {coursesHeading.coursesPrimaryHeading}
         </h2>
+			 
+				<p className="mt-2 max-w-2xl mb-12 text-[var(--color-text-secondary)]">
+					{coursesHeading.coursesSecondaryHeading}
+				</p>
+
          
 
         {/* GRID */}
@@ -40,7 +45,7 @@ const Courses: FC = () => {
 								>
 									{/* Right side accent */}
 									<div
-										className="absolute top-0 right-0 h-full w-3
+										className="absolute top-0 right-0 h-full w-1 md:w-3
 															 bg-[var(--color-primary)]
 															 transition-all duration-500
 															 group-hover:w-full group-hover:bg-[var(--color-primary)]"

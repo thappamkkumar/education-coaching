@@ -5,5 +5,6 @@ export interface Courses {
 }
 
 export type CoursesHeading = {
-  servicePrimaryHeading: string; 
+  coursesPrimaryHeading: string; 
+  coursesSecondaryHeading: string; 
 };

@@ -7,10 +7,10 @@ const Hero: FC = () => {
     <section
       id="home"
       aria-label="Hero Section" 
-			style={{ backgroundImage: `url('/hero/bg.png')` }}
-      className="    relative w-full  	bg-cover bg-top-right bg-no-repeat "
+			style={{ backgroundImage: `url('/bg/bg3.png')` }}
+      className="    relative w-full  	bg-cover bg-bottom-right bg-no-repeat "
     >
-      <div className="bg-[var(--color-surface)]/90	 ">
+      <div className="bg-[var(--color-background)]/90	shadow-inner ">
         <div
           className="
             max-w-7xl mx-auto
@@ -91,19 +91,15 @@ const Hero: FC = () => {
             </div>
 
             {/* ================= RIGHT: IMAGE ================= */}
-            <div className="flex justify-center lg:justify-end items-center  ">
+            <div className="relative flex justify-center lg:justify-end items-center  ">
               <img
                 src={heroData.image.src}
                 alt={heroData.image.alt}
-                className="
-                  h-[50vh]
-                  sm:h-[70vh]
-                  md:h-[80vh]
-                  lg:h-[90vh]
-                  w-auto
-                  object-contain  
+                className="h-[50vh]  sm:h-[70vh]  md:h-[80vh]  lg:h-[90vh]  w-auto object-contain  
                 "
               />
+							
+							<div className="w-full h-0    absolute left-0 bottom-0 custom-shadow" />
             </div>
 
           </div>

@@ -6,8 +6,8 @@ const Highlights: FC = () => {
   return (
     <section
       id="highlights"
-			style={{ backgroundImage: `url(${bgImage})` }}
-      className="    relative w-full 	bg-cover bg-bottom-left bg-no-repeat "
+		 
+      className="    relative w-full 	 "
       aria-label="Key highlights"
     >
 			<div className="  bg-[var(--color-background)]/90"  >
