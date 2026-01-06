@@ -3,7 +3,7 @@ import ResultsCard from "./ResultsCard";
 import { AchievementItem } from "@/types/achievement";
 
 interface Props {
-  scrollRef: RefObject<HTMLDivElement>;
+  scrollRef: RefObject<HTMLDivElement | null>;
   items: AchievementItem[];
 }
 

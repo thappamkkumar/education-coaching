@@ -9,7 +9,4 @@ export interface HighlightsProps {
   iconMap: Record<string, React.ElementType>; // maps icon names to React components
 }
 
-
-export interface BgImage { 
-  image?: string;  
-}
+ 

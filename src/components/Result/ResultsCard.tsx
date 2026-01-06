@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AchievementItem } from "@/content/achievementsData";
+import { AchievementItem } from "@/types/achievement";
 
 interface Props {
   data: AchievementItem;

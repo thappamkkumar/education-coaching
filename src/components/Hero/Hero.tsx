@@ -39,20 +39,20 @@ const Hero: FC = () => {
                 
                 {/* Primary CTA */}
                 <a
-                  href={primaryAction.href}
+                  href={primaryAction?.href}
                   className=" inline-flex items-center justify-center gap-2  px-8 py-3.5 rounded-full  bg-[var(--color-primary)] text-white font-semibold  shadow-lg shadow-[var(--color-primary)]/30  transition-all duration-300 hover:bg-[var(--color-primary)]/90"
                 >
                   <Phone className="w-5 h-5  " />
-                  {primaryAction.label}
+                  {primaryAction?.label}
                 </a>
 
                 {/* Secondary CTA */}
                 <a
-                  href={secondaryAction.href}
+                  href={secondaryAction?.href}
                   className=" inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-semibold transition-all duration-300 hover:bg-[var(--color-primary)]/20  "
                 >
                   <MessageCircle className="w-5 h-5 " />
-                  {secondaryAction.label}
+                  {secondaryAction?.label}
                 </a>
 
               </div>

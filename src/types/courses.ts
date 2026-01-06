@@ -1,7 +1,6 @@
 export interface Courses {
   title: string; 
-	description:string;
-	bgImage:string;
+	description:string; 
 }
 
 export type CoursesHeading = {

@@ -5,17 +5,14 @@ import { aboutData } from "@/content/aboutData";
 import { CheckCircle } from "lucide-react"; 
 
 const About: FC = ()  => {
-  const { title, description, bulletPoints, imageUrl, imageAltText, aboutBgImageUrl } = aboutData;
+  const { title, description, bulletPoints, imageUrl, imageAltText } = aboutData;
 
   return (
     <section
 			id="about"
 			aria-label="About section"
-			style={{ backgroundImage: `url(${aboutBgImageUrl})` }}
-			className="
-				relative w-full 
-				bg-cover bg-top-right bg-no-repeat
-			"
+			 
+			className="				  w-full  			"
 		>
 			<div className="  bg-[var(--color-background)]/80"  >
 

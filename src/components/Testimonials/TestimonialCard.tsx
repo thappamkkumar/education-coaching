@@ -6,10 +6,12 @@ interface Props {
 }
 
 const TestimonialCard = ({ data }: Props) => {
+  const rating = data.rating ?? 0;
+
   return (
     <div
       data-card
-      className=" flex-shrink-0 w-[85vw] sm:w-[320px] lg:w-[360px]  bg-white rounded-3xl p-6  shadow-lg  border  border-[var(--color-secondary)] transition-transform duration-300 ease-in-out  hover:shadow-2xl hover:-translate-y-2 "
+      className="flex-shrink-0 w-[85vw] sm:w-[320px] lg:w-[360px] bg-white rounded-3xl p-6 shadow-lg border border-[var(--color-secondary)] transition-transform duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2"
     >
       {/* Quote */}
       <Quote className="w-8 h-8 text-[var(--color-secondary)]/50 mb-3" />
@@ -20,13 +22,13 @@ const TestimonialCard = ({ data }: Props) => {
       </p>
 
       {/* Rating */}
-      {data.rating && (
+      {rating > 0 && (
         <div className="flex gap-1 mt-4">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star
               key={i}
               className={`w-4 h-4 ${
-                i < data.rating
+                i < rating
                   ? "fill-[var(--color-accent)] text-[var(--color-accent)]"
                   : "text-gray-300"
               }`}

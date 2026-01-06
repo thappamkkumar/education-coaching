@@ -85,8 +85,8 @@ const Header: FC = () => {
             <Image
               src={headerLogoUrl}
               alt={`${businessName} Logo`}
-              width={44}
-              height={44}
+              width={70}
+              height={55}
               priority
               className="object-contain"
             /> 

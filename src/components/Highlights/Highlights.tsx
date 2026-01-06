@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { highlightsIconMap } from "@/lib/highlightsIconMap";
-import { highlightsData, bgImage } from "@/content/highlightsData";
+import { highlightsData } from "@/content/highlightsData";
 
 const Highlights: FC = () => {
   return (

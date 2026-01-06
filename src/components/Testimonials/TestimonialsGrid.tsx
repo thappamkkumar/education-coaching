@@ -3,7 +3,7 @@ import { TestimonialItem } from "@/types/testimonial";
 
 interface Props {
   items: TestimonialItem[];
-  scrollRef: React.RefObject<HTMLDivElement>;
+  scrollRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const TestimonialsGrid = ({ items, scrollRef }: Props) => {
