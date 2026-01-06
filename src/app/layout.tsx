@@ -1,21 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next"; 
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+ 
 
 export const metadata: Metadata = {
-  title: "Sample Website",
-  description: "Sample Website",
+  title: "SuccessTrack Coaching - Online & Local Coaching Center",
+  description: "SuccessTrack Coaching helps students achieve their goals with expert guidance, personalized coaching, and proven strategies for academic and professional success.",
 };
+
 
 export default function RootLayout({
   children,
@@ -25,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--color-background)] `}
+        className={`  antialiased bg-[var(--color-background)] `}
       >
         {children}
       </body>

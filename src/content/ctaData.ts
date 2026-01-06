@@ -6,10 +6,10 @@ export const ctaData: CTAData = {
     "Get personalized counseling and choose the right course for your goal.",
   primaryAction: {
     label: "Call Now",
-    href: "tel:+919999999999",
+    href: "tel:+916005819576",
   },
   secondaryAction: {
     label: "WhatsApp Chat",
-    href: "https://wa.me/919999999999",
+    href: "https://wa.me/6005819576",
   },
 };
