@@ -98,10 +98,9 @@ The platform emphasizes frontend implementation and responsive design consistenc
 education-coaching/
 ├── app/
 ├── components/
-├── public/
-├── styles/
-├── types/
-└── utils/
+├── content/
+├── lib/
+├── types/ 
 ```
 
 ---
