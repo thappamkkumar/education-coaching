@@ -17,11 +17,11 @@ The project focuses on structured frontend architecture, responsive design, reus
 ### Desktop View
 ![Desktop View](./screenshots/desktop.png)
 
-### Course & Program Sections
-![Programs](./screenshots/programs.png)
+### Courses We Offer
+![Courses](./screenshots/courses.png)
 
-### Student-Focused Interface
-![Student UI](./screenshots/student-ui.png)
+### Student Experience
+![Student Experience](./screenshots/student-experience.png)
 
 ### Mobile Responsive Design
 ![Mobile View](./screenshots/mobile.png)
